@@ -2,6 +2,13 @@
 # Cadence Virtuoso / IC Design Projects
 # ---------------------------------------
 
+# PDK / setup artifacts
+.remove_locks.sh
+rve_vis_asap7.cto
+display.drf
+cds.lib
+Calibrate_Usage_Instructions.txt
+
 # Cadence database junk and temp files
 *.log
 *.lck
