@@ -1,0 +1,146 @@
+# ---------------------------------------
+# Cadence Virtuoso / IC Design Projects
+# ---------------------------------------
+
+# Cadence database junk and temp files
+*.log
+*.lck
+*.cdslck
+*.oa
+*.bak
+*.err
+*.jou
+*.out
+*.tmp
+*~ 
+*.swp
+*.svl
+*.lock
+
+# Simulation / ADE / HSPICE data
+psf/
+psfDC/
+psf.tran/
+ahdlSimDB/
+spectre.out
+spectre.ic
+spectre.fc
+*.raw
+*.ic0
+*.fc0
+*.hdf5
+*.fsdb
+*.wdb
+*.tr0
+*.sw0
+*.ahdlSimDB
+*.simvision/
+*.sdf
+*.logFile
+
+# Cadence environment and state
+*.cdsenv
+*.cdsinit
+*.cdslog
+*.cdslck
+*.cws
+*.icfb*
+*.ocean
+*.history
+*.rundir
+*.run
+*.stat
+
+# ADE / Explorer / Assembler states
+*.adexl*
+*.maestro*
+*Results/
+*results/
+cellviewBackup/
+
+# PDK / Process-related generated files
+techfile/
+cdb/
+oaDesignDB/
+*.oaDesign
+*.oaLibrary
+*.oaCellView
+
+# Layout/DRC/LVS temporary files
+*.drc
+*.lvs
+*.extracted
+*.spef
+*.spf
+*.pex
+*.gds_lock
+*.layout.db
+*.layout
+*.drc.results
+*.lvs.results
+
+# Virtuoso lock and session files
+lock*
+session.*
+*.vrl
+*.rdb
+*.ddb
+
+# Backup / Autosave
+*.bak
+backup/
+autosave/
+*.sav
+*.sdb
+
+# Waveform and plot data
+waves/
+*.psf
+*.trn
+*.mt0
+*.sw0
+*.fsdb
+
+# Temporary simulation folders
+simvision/
+simv/
+INCA_libs/
+work/
+verilog.compile/
+ncsim_setup/
+xcelium.d/
+runSimulation/
+sim_results/
+*.xcelium.shm/
+xrun.history
+
+# Cadence SKILL compiled binaries
+*.ilc
+*.oac
+*.so
+*.elc
+
+# IDE or OS junk
+.DS_Store
+Thumbs.db
+*.pyc
+__pycache__/
+.vscode/
+.idea/
+
+# ---------------------------------------
+# Keep these (important!)
+# ---------------------------------------
+!*.sch
+!*.sym
+!*.lay
+!*.il
+!*.def
+!*.gds
+!*.csh
+!*.tcl
+!*.sh
+!*.py
+!*.txt
+!*.md
+
