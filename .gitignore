@@ -57,6 +57,7 @@ spectre.fc
 *.rundir
 *.run
 *.stat
+*.cadence
 
 # ADE / Explorer / Assembler states
 *.adexl*
