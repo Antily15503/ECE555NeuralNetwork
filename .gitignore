@@ -7,7 +7,9 @@
 rve_vis_asap7.cto
 display.drf
 cds.lib
-Calibrate_Usage_Instructions.txt
+Calibre_Usage_Instructions.txt
+asap7_drm.pdf
+mej_paper_asap7.pdf
 
 # Cadence database junk and temp files
 *.log
