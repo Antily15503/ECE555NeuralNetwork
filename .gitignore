@@ -62,7 +62,6 @@ spectre.fc
 
 # ADE / Explorer / Assembler states
 *.adexl*
-*.maestro*
 *Results/
 *results/
 cellviewBackup/

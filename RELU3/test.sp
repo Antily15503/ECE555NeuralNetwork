@@ -12,9 +12,9 @@
 .INCLUDE "RELU3.sp"
 v1 vdd! 0 0.9v
 v2 vss! 0 0v
-v3 y0 0 pwl 0ns 0v 1ns 0v 1.02ns 0.9v 3ns 0.9v 3.02ns 0v 5ns 0v 5.02ns 0.9v 7ns 0.9v 7.02ns 0v 8ns 0v
-v4 y1 0 pwl 0ns 0v 2ns 0v 2.02ns 0.9v 4ns 0.9v 4.02ns 0v 6ns 0v 6.02ns 0.9v 8ns 0.9v
-v5 y2 0 pwl 0ns 0.9v 4ns 0.9v 4.02ns 0v 8ns 0v
+v3 y<0> 0 pwl 0ns 0v 1ns 0v 1.02ns 0.9v 3ns 0.9v 3.02ns 0v 5ns 0v 5.02ns 0.9v 7ns 0.9v 7.02ns 0v 8ns 0v
+v4 y<1> 0 pwl 0ns 0v 2ns 0v 2.02ns 0.9v 4ns 0.9v 4.02ns 0v 6ns 0v 6.02ns 0.9v 8ns 0.9v
+v5 y<2> 0 pwl 0ns 0.9v 4ns 0.9v 4.02ns 0v 8ns 0v
 .OP
-.TRAN STEP=10p STOP=14n
+.TRAN STEP=10p STOP=8n
 .end
