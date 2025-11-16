@@ -1,0 +1,37 @@
+//
+//  Rule file generated on Sat Nov 15 18:29:14 2025
+//  by Calibre Interactive v2024.4_39.16    Tue Dec 3 16:43:50 PST 2024
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+LAYOUT PATH "NOR.calibre.db"
+LAYOUT SYSTEM GDSII
+LAYOUT PRIMARY "NOR"
+
+SOURCE PATH "NOR.src.net"
+SOURCE SYSTEM SPICE
+SOURCE PRIMARY "NOR"
+
+MASK SVDB DIRECTORY "svdb" QUERY
+
+LVS REPORT "NOR.lvs.report"
+
+LVS POWER NAME "vdd!" "VDD!" "vdd" "VDD"
+LVS GROUND NAME "VSS" "VSS!" "GND" "GND!"
+
+LVS REPORT MAXIMUM ALL
+
+VIRTUAL CONNECT NAME "VDD" "VSS"
+
+LVS EXECUTE ERC YES
+
+ERC RESULTS DATABASE "NOR.erc.results"
+ERC CELL NAME YES CELL SPACE XFORM
+
+ERC SUMMARY REPORT "NOR.erc.summary" HIER
+
+DRC ICSTATION YES
+
+INCLUDE "/cae/apps/data/asap7PDK-2022/asap7PDK_r1p7/calibre/ruledirs/lvs/lvsRules_calibre_asap7.rul"
