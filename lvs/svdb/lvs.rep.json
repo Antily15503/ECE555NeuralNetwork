@@ -1,14 +1,14 @@
 {
     "PLEASE DON'T EDIT OR PARSE": "This is automatically generated file for extracting in QS",
-    "CREATION TIME": "Sat Nov 15 18:29:17 2025",
+    "CREATION TIME": "Thu Nov 20 22:49:15 2025",
     "VERSION": "1",
     "LVS REPORT OPTION": [
         "N"
     ],
     "LVS CORRECT CELLS": [
         [
-            "NOR",
-            "NOR"
+            "XOR",
+            "XOR"
         ]
     ]
 }

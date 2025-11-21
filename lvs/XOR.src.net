@@ -1,0 +1,30 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  TeamKEK
+* Top Cell Name: XOR
+* View Name:     schematic
+* Netlisted on:  Nov 20 22:49:12 2025
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: TeamKEK
+* Cell Name:    XOR
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT XOR A B VDD VSS Y
+*.PININFO A:I B:I Y:O VDD:B VSS:B
+MM2 Y A net6 VSS nmos_rvt w=81.0n l=20n nfin=3
+MM3 net6 B VSS VSS nmos_rvt w=81.0n l=20n nfin=3
+MM0 Y A B VDD pmos_rvt w=81.0n l=20n nfin=3
+MM1 Y B A VDD pmos_rvt w=81.0n l=20n nfin=3
+.ENDS
+

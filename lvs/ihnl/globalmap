@@ -1,6 +1,6 @@
 CADENCE IHNL11140
 $model
-TeamKEK/NOR/schematic NOR
+TeamKEK/XOR/schematic XOR
 $endmodel
 $net
 $endnet
