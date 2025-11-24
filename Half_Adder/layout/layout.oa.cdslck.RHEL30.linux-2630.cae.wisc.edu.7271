@@ -12,5 +12,5 @@ ProcessCreationTime_Readable   Sun Nov 23 16:59:37 2025 CST
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
-FilePathUsedToEditLock         /filespace/k/kpandey4/ece555/ECE555/ECE555NeuralNetwork/XOR/layout/layout.oa.cdslck
-TimeEditLocked                 Sun Nov 23 17:03:29 2025 CST
+FilePathUsedToEditLock         /filespace/k/kpandey4/ece555/ECE555/ECE555NeuralNetwork/Half_Adder/layout/layout.oa.cdslck
+TimeEditLocked                 Sun Nov 23 19:33:40 2025 CST

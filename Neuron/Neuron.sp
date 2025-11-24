@@ -1,18 +1,3 @@
-** Generated for: hspiceD
-** Generated on: Nov 23 18:10:01 2025
-** Design library name: TeamKEK
-** Design cell name: Neuron
-** Design view name: schematic
-
-
-.TEMP 25
-.OPTION
-+    ARTIST=2
-+    INGOLD=2
-+    PARHIER=LOCAL
-+    PSF=2
-+    HIER_DELIM=0
-
 ** Library name: TeamKEK
 ** Cell name: NAND
 ** View name: schematic
@@ -37,9 +22,9 @@
 ** Library name: TeamKEK
 ** Cell name: XNOR-NOR
 ** View name: schematic
-.subckt _sub1 a b nand vdd vss y
+.subckt _sub3 a b nand vdd vss y
 xi2 nand net5 y vdd vss NOR
-.ends _sub1
+.ends _sub3
 ** End of subcircuit definition.
 
 ** Library name: TeamKEK
@@ -48,7 +33,7 @@ xi2 nand net5 y vdd vss NOR
 .subckt MULT2bit a<1> a<0> b<1> b<0> y<1> y<0> vdd vss
 xi0 a<0> b<0> net3 vdd vss NAND
 xi1 net3 y<0> vdd vss INV
-xi6 a<1> b<1> net3 vdd vss y<1> _sub1
+xi6 a<1> b<1> net3 vdd vss y<1> _sub3
 .ends MULT2bit
 ** End of subcircuit definition.
 
@@ -111,7 +96,7 @@ xi3 a<2> w20<2> vdd vss net16 XOR
 ** Library name: TeamKEK
 ** Cell name: Neuron
 ** View name: schematic
-xi1 x1<1> x1<0> w00<1> w00<0> net2<0> net2<1> vdd vss MULT2bit
+xi1 x1<1> x1<0> w01<1> w01<0> net2<0> net2<1> vdd vss MULT2bit
 xi0 x0<1> x0<0> w00<1> w00<0> net11<0> net11<1> vdd vss MULT2bit
 xi5 net11<0> net11<1> net2<0> net2<1> net12<0> net12<1> net12<2> vss vdd Ripple_Adder_2_bit
 xi6 net12<0> net12<1> net12<2> s<2> s<1> s<0> vdd vss w20<2> w20<1> w20<0> Ripple_Adder_3_bit

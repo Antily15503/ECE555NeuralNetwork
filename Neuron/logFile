@@ -2,7 +2,7 @@ header
 "PSFversion" "1.00"
 "simulator" "HSPICE"
 "version" "X-2025.06 linux64"
-"rundate" "18:07:24 11/23/2025 "
+"rundate" "18:19:02 11/23/2025 "
 "runtitle" "*===========================================================      "
 "runtype" "logFile"
 TYPE
@@ -14,30 +14,6 @@ TYPE
 "sweepVariable" ARRAY ( * ) STRING *
 "description" STRING * )
 VALUE
-"opBegin" "analysisInst" ( 
-"Operating Point"
-"test.op0"
-"PSF"
-""
-()
-"Operating Point"
-)
-"timeSweep" "analysisInst" ( 
-"Transient Analysis"
-"test.tr0"
-"PSF"
-""
-()
-"Transient Analysis"
-)
-"opEnd" "analysisInst" ( 
-"Operating Point"
-"test.op0@1.2e-08"
-"PSF"
-""
-()
-"Operating Point"
-)
 "summary" "analysisInst" ( 
 "Summary Information"
 "test.su0"
