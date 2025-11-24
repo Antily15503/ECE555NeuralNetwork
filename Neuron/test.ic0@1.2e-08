@@ -1,0 +1,55 @@
+* "simulator" "PrimeSim HSPICE"
+* "version" "X-2025.06 linux64"
+* "format" "HSP"
+* "rundate" "18:07:24 11/23/2025 "
+* "netlist" "test.sp "
+* "runtitle" "*==========================================================="
+* time =  1.2000000e-08   
+* temperature =  2.5000000e+01   
+*** BEGIN: Saved Operating Point ***                     
+*.option
+*+ gmindc = 1.0000000e-12  
+.nodeset
++ s<0> = 0.0000000e+00   
++ s<1> = 0.0000000e+00   
++ s<2> = 0.0000000e+00   
++ vdd! = 9.0000000e-01   
++ vss! = 0.0000000e+00   
++ w00<0> = 0.0000000e+00   
++ w00<1> = 9.0000000e-01   
++ w01<0> = 9.0000000e-01   
++ w01<1> = 9.0000000e-01   
++ w20<0> = 9.0000000e-01   
++ w20<1> = 0.0000000e+00   
++ w20<2> = 9.0000000e-01   
++ x0<0> = 0.0000000e+00   
++ x0<1> = 9.0000000e-01   
++ x1<0> = 9.0000000e-01   
++ x1<1> = 0.0000000e+00   
++ z0<0> = 0.0000000e+00   
++ z0<1> = 0.0000000e+00   
++ x_neuron^net11<0> = 0.0000000e+00   
++ x_neuron^net11<1> = 0.0000000e+00   
++ x_neuron^net12<0> = 0.0000000e+00   
++ x_neuron^net12<1> = 0.0000000e+00   
++ x_neuron^net12<2> = 0.0000000e+00   
++ x_neuron^net2<0> = 0.0000000e+00   
++ x_neuron^net2<1> = 0.0000000e+00   
++ x_neuron^net3 = 0.0000000e+00   
++ x_neuron^xi1^net3 = 0.0000000e+00   
++ x_neuron^xi0^net3 = 0.0000000e+00   
++ x_neuron^xi5^net5 = 0.0000000e+00   
++ x_neuron^xi6^net11 = 0.0000000e+00   
++ x_neuron^xi6^net16 = 0.0000000e+00   
++ x_neuron^xi6^net4 = 0.0000000e+00   
++ x_neuron^xi1^xi6^net5 = 0.0000000e+00   
++ x_neuron^xi0^xi6^net5 = 0.0000000e+00   
++ x_neuron^xi5^xi1^net13 = 0.0000000e+00   
++ x_neuron^xi5^xi1^net18 = 0.0000000e+00   
++ x_neuron^xi5^xi1^net3 = 0.0000000e+00   
++ x_neuron^xi5^xi6^net3 = 0.0000000e+00   
++ x_neuron^xi6^xi0^net3 = 0.0000000e+00   
++ x_neuron^xi6^xi2^net13 = 0.0000000e+00   
++ x_neuron^xi6^xi2^net18 = 0.0000000e+00   
++ x_neuron^xi6^xi2^net3 = 0.0000000e+00   
+***   END: Saved Operating Point ***                     
