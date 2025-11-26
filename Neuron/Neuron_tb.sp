@@ -1,0 +1,1249 @@
+** Neuron_tb
+.GLOBAL VSS VDD
+.TEMP 25.0
+.OPTION
++	ARTIST=2
++	INGOLD=2
++	PARHIER=LOCAL
++	PSF=2
++	HIER_DELIM=0
+.options accurate=1 NUMDGT=8 measdgt=5 GMINDC=1e-18 DELMAX=1n method=gear INGOLD=2 POST=1
+.INCLUDE "/cae/apps/data/asap7PDK-2022/asap7PDK_r1p7/models/hspice/7nm_TT_160803.pm"
+.INCLUDE "Neuron.sp"
+
+v1 VDD 0 0.9v
+v2 VSS 0 0v
+
+v3 X0<0> 0 pwl 0.0n 0.9v 81.0n 0.9v 81.025n 0v 162.0n 0v 162.025n 0.9v
+v4 X0<1> 0 pwl 0.0n 0.9v 81.0n 0.9v 81.025n 0v
+v5 X1<0> 0 pwl 0.0n 0.9v 27.0n 0.9v 27.025n 0v 54.0n 0v 54.025n 0.9v 108.0n 0.9v 108.025n 0v 135.0n 0v 135.025n 0.9v 189.0n 0.9v 189.025n 0v 216.0n 0v 216.025n 0.9v
+v6 X1<1> 0 pwl 0.0n 0.9v 27.0n 0.9v 27.025n 0v 81.0n 0v 81.025n 0.9v 108.0n 0.9v 108.025n 0v 162.0n 0v 162.025n 0.9v 189.0n 0.9v 189.025n 0v
+v7 W00<0> 0 pwl 0.0n 0.9v 9.0n 0.9v 9.025n 0v 18.0n 0v 18.025n 0.9v 36.0n 0.9v 36.025n 0v 45.0n 0v 45.025n 0.9v 63.0n 0.9v 63.025n 0v 72.0n 0v 72.025n 0.9v 90.0n 0.9v 90.025n 0v 99.0n 0v 99.025n 0.9v 117.0n 0.9v 117.025n 0v 126.0n 0v 126.025n 0.9v 144.0n 0.9v 144.025n 0v 153.0n 0v 153.025n 0.9v 171.0n 0.9v 171.025n 0v 180.0n 0v 180.025n 0.9v 198.0n 0.9v 198.025n 0v 207.0n 0v 207.025n 0.9v 225.0n 0.9v 225.025n 0v 234.0n 0v 234.025n 0.9v
+v8 W00<1> 0 pwl 0.0n 0.9v 9.0n 0.9v 9.025n 0v 27.0n 0v 27.025n 0.9v 36.0n 0.9v 36.025n 0v 54.0n 0v 54.025n 0.9v 63.0n 0.9v 63.025n 0v 81.0n 0v 81.025n 0.9v 90.0n 0.9v 90.025n 0v 108.0n 0v 108.025n 0.9v 117.0n 0.9v 117.025n 0v 135.0n 0v 135.025n 0.9v 144.0n 0.9v 144.025n 0v 162.0n 0v 162.025n 0.9v 171.0n 0.9v 171.025n 0v 189.0n 0v 189.025n 0.9v 198.0n 0.9v 198.025n 0v 216.0n 0v 216.025n 0.9v 225.0n 0.9v 225.025n 0v
+v9 W01<0> 0 pwl 0.0n 0.9v 3.0n 0.9v 3.025n 0v 6.0n 0v 6.025n 0.9v 12.0n 0.9v 12.025n 0v 15.0n 0v 15.025n 0.9v 21.0n 0.9v 21.025n 0v 24.0n 0v 24.025n 0.9v 30.0n 0.9v 30.025n 0v 33.0n 0v 33.025n 0.9v 39.0n 0.9v 39.025n 0v 42.0n 0v 42.025n 0.9v 48.0n 0.9v 48.025n 0v 51.0n 0v 51.025n 0.9v 57.0n 0.9v 57.025n 0v 60.0n 0v 60.025n 0.9v 66.0n 0.9v 66.025n 0v 69.0n 0v 69.025n 0.9v 75.0n 0.9v 75.025n 0v 78.0n 0v 78.025n 0.9v 84.0n 0.9v 84.025n 0v 87.0n 0v 87.025n 0.9v 93.0n 0.9v 93.025n 0v 96.0n 0v 96.025n 0.9v 102.0n 0.9v 102.025n 0v 105.0n 0v 105.025n 0.9v 111.0n 0.9v 111.025n 0v 114.0n 0v 114.025n 0.9v 120.0n 0.9v 120.025n 0v 123.0n 0v 123.025n 0.9v 129.0n 0.9v 129.025n 0v 132.0n 0v 132.025n 0.9v 138.0n 0.9v 138.025n 0v 141.0n 0v 141.025n 0.9v 147.0n 0.9v 147.025n 0v 150.0n 0v 150.025n 0.9v 156.0n 0.9v 156.025n 0v 159.0n 0v 159.025n 0.9v 165.0n 0.9v 165.025n 0v 168.0n 0v 168.025n 0.9v 174.0n 0.9v 174.025n 0v 177.0n 0v 177.025n 0.9v 183.0n 0.9v 183.025n 0v 186.0n 0v 186.025n 0.9v 192.0n 0.9v 192.025n 0v 195.0n 0v 195.025n 0.9v 201.0n 0.9v 201.025n 0v 204.0n 0v 204.025n 0.9v 210.0n 0.9v 210.025n 0v 213.0n 0v 213.025n 0.9v 219.0n 0.9v 219.025n 0v 222.0n 0v 222.025n 0.9v 228.0n 0.9v 228.025n 0v 231.0n 0v 231.025n 0.9v 237.0n 0.9v 237.025n 0v 240.0n 0v 240.025n 0.9v
+v10 W01<1> 0 pwl 0.0n 0.9v 3.0n 0.9v 3.025n 0v 9.0n 0v 9.025n 0.9v 12.0n 0.9v 12.025n 0v 18.0n 0v 18.025n 0.9v 21.0n 0.9v 21.025n 0v 27.0n 0v 27.025n 0.9v 30.0n 0.9v 30.025n 0v 36.0n 0v 36.025n 0.9v 39.0n 0.9v 39.025n 0v 45.0n 0v 45.025n 0.9v 48.0n 0.9v 48.025n 0v 54.0n 0v 54.025n 0.9v 57.0n 0.9v 57.025n 0v 63.0n 0v 63.025n 0.9v 66.0n 0.9v 66.025n 0v 72.0n 0v 72.025n 0.9v 75.0n 0.9v 75.025n 0v 81.0n 0v 81.025n 0.9v 84.0n 0.9v 84.025n 0v 90.0n 0v 90.025n 0.9v 93.0n 0.9v 93.025n 0v 99.0n 0v 99.025n 0.9v 102.0n 0.9v 102.025n 0v 108.0n 0v 108.025n 0.9v 111.0n 0.9v 111.025n 0v 117.0n 0v 117.025n 0.9v 120.0n 0.9v 120.025n 0v 126.0n 0v 126.025n 0.9v 129.0n 0.9v 129.025n 0v 135.0n 0v 135.025n 0.9v 138.0n 0.9v 138.025n 0v 144.0n 0v 144.025n 0.9v 147.0n 0.9v 147.025n 0v 153.0n 0v 153.025n 0.9v 156.0n 0.9v 156.025n 0v 162.0n 0v 162.025n 0.9v 165.0n 0.9v 165.025n 0v 171.0n 0v 171.025n 0.9v 174.0n 0.9v 174.025n 0v 180.0n 0v 180.025n 0.9v 183.0n 0.9v 183.025n 0v 189.0n 0v 189.025n 0.9v 192.0n 0.9v 192.025n 0v 198.0n 0v 198.025n 0.9v 201.0n 0.9v 201.025n 0v 207.0n 0v 207.025n 0.9v 210.0n 0.9v 210.025n 0v 216.0n 0v 216.025n 0.9v 219.0n 0.9v 219.025n 0v 225.0n 0v 225.025n 0.9v 228.0n 0.9v 228.025n 0v 234.0n 0v 234.025n 0.9v 237.0n 0.9v 237.025n 0v
+v11 W02<0> 0 pwl 0.0n 0.9v 1.0n 0.9v 1.025n 0v 2.0n 0v 2.025n 0.9v 4.0n 0.9v 4.025n 0v 5.0n 0v 5.025n 0.9v 7.0n 0.9v 7.025n 0v 8.0n 0v 8.025n 0.9v 10.0n 0.9v 10.025n 0v 11.0n 0v 11.025n 0.9v 13.0n 0.9v 13.025n 0v 14.0n 0v 14.025n 0.9v 16.0n 0.9v 16.025n 0v 17.0n 0v 17.025n 0.9v 19.0n 0.9v 19.025n 0v 20.0n 0v 20.025n 0.9v 22.0n 0.9v 22.025n 0v 23.0n 0v 23.025n 0.9v 25.0n 0.9v 25.025n 0v 26.0n 0v 26.025n 0.9v 28.0n 0.9v 28.025n 0v 29.0n 0v 29.025n 0.9v 31.0n 0.9v 31.025n 0v 32.0n 0v 32.025n 0.9v 34.0n 0.9v 34.025n 0v 35.0n 0v 35.025n 0.9v 37.0n 0.9v 37.025n 0v 38.0n 0v 38.025n 0.9v 40.0n 0.9v 40.025n 0v 41.0n 0v 41.025n 0.9v 43.0n 0.9v 43.025n 0v 44.0n 0v 44.025n 0.9v 46.0n 0.9v 46.025n 0v 47.0n 0v 47.025n 0.9v 49.0n 0.9v 49.025n 0v 50.0n 0v 50.025n 0.9v 52.0n 0.9v 52.025n 0v 53.0n 0v 53.025n 0.9v 55.0n 0.9v 55.025n 0v 56.0n 0v 56.025n 0.9v 58.0n 0.9v 58.025n 0v 59.0n 0v 59.025n 0.9v 61.0n 0.9v 61.025n 0v 62.0n 0v 62.025n 0.9v 64.0n 0.9v 64.025n 0v 65.0n 0v 65.025n 0.9v 67.0n 0.9v 67.025n 0v 68.0n 0v 68.025n 0.9v 70.0n 0.9v 70.025n 0v 71.0n 0v 71.025n 0.9v 73.0n 0.9v 73.025n 0v 74.0n 0v 74.025n 0.9v 76.0n 0.9v 76.025n 0v 77.0n 0v 77.025n 0.9v 79.0n 0.9v 79.025n 0v 80.0n 0v 80.025n 0.9v 82.0n 0.9v 82.025n 0v 83.0n 0v 83.025n 0.9v 85.0n 0.9v 85.025n 0v 86.0n 0v 86.025n 0.9v 88.0n 0.9v 88.025n 0v 89.0n 0v 89.025n 0.9v 91.0n 0.9v 91.025n 0v 92.0n 0v 92.025n 0.9v 94.0n 0.9v 94.025n 0v 95.0n 0v 95.025n 0.9v 97.0n 0.9v 97.025n 0v 98.0n 0v 98.025n 0.9v 100.0n 0.9v 100.025n 0v 101.0n 0v 101.025n 0.9v 103.0n 0.9v 103.025n 0v 104.0n 0v 104.025n 0.9v 106.0n 0.9v 106.025n 0v 107.0n 0v 107.025n 0.9v 109.0n 0.9v 109.025n 0v 110.0n 0v 110.025n 0.9v 112.0n 0.9v 112.025n 0v 113.0n 0v 113.025n 0.9v 115.0n 0.9v 115.025n 0v 116.0n 0v 116.025n 0.9v 118.0n 0.9v 118.025n 0v 119.0n 0v 119.025n 0.9v 121.0n 0.9v 121.025n 0v 122.0n 0v 122.025n 0.9v 124.0n 0.9v 124.025n 0v 125.0n 0v 125.025n 0.9v 127.0n 0.9v 127.025n 0v 128.0n 0v 128.025n 0.9v 130.0n 0.9v 130.025n 0v 131.0n 0v 131.025n 0.9v 133.0n 0.9v 133.025n 0v 134.0n 0v 134.025n 0.9v 136.0n 0.9v 136.025n 0v 137.0n 0v 137.025n 0.9v 139.0n 0.9v 139.025n 0v 140.0n 0v 140.025n 0.9v 142.0n 0.9v 142.025n 0v 143.0n 0v 143.025n 0.9v 145.0n 0.9v 145.025n 0v 146.0n 0v 146.025n 0.9v 148.0n 0.9v 148.025n 0v 149.0n 0v 149.025n 0.9v 151.0n 0.9v 151.025n 0v 152.0n 0v 152.025n 0.9v 154.0n 0.9v 154.025n 0v 155.0n 0v 155.025n 0.9v 157.0n 0.9v 157.025n 0v 158.0n 0v 158.025n 0.9v 160.0n 0.9v 160.025n 0v 161.0n 0v 161.025n 0.9v 163.0n 0.9v 163.025n 0v 164.0n 0v 164.025n 0.9v 166.0n 0.9v 166.025n 0v 167.0n 0v 167.025n 0.9v 169.0n 0.9v 169.025n 0v 170.0n 0v 170.025n 0.9v 172.0n 0.9v 172.025n 0v 173.0n 0v 173.025n 0.9v 175.0n 0.9v 175.025n 0v 176.0n 0v 176.025n 0.9v 178.0n 0.9v 178.025n 0v 179.0n 0v 179.025n 0.9v 181.0n 0.9v 181.025n 0v 182.0n 0v 182.025n 0.9v 184.0n 0.9v 184.025n 0v 185.0n 0v 185.025n 0.9v 187.0n 0.9v 187.025n 0v 188.0n 0v 188.025n 0.9v 190.0n 0.9v 190.025n 0v 191.0n 0v 191.025n 0.9v 193.0n 0.9v 193.025n 0v 194.0n 0v 194.025n 0.9v 196.0n 0.9v 196.025n 0v 197.0n 0v 197.025n 0.9v 199.0n 0.9v 199.025n 0v 200.0n 0v 200.025n 0.9v 202.0n 0.9v 202.025n 0v 203.0n 0v 203.025n 0.9v 205.0n 0.9v 205.025n 0v 206.0n 0v 206.025n 0.9v 208.0n 0.9v 208.025n 0v 209.0n 0v 209.025n 0.9v 211.0n 0.9v 211.025n 0v 212.0n 0v 212.025n 0.9v 214.0n 0.9v 214.025n 0v 215.0n 0v 215.025n 0.9v 217.0n 0.9v 217.025n 0v 218.0n 0v 218.025n 0.9v 220.0n 0.9v 220.025n 0v 221.0n 0v 221.025n 0.9v 223.0n 0.9v 223.025n 0v 224.0n 0v 224.025n 0.9v 226.0n 0.9v 226.025n 0v 227.0n 0v 227.025n 0.9v 229.0n 0.9v 229.025n 0v 230.0n 0v 230.025n 0.9v 232.0n 0.9v 232.025n 0v 233.0n 0v 233.025n 0.9v 235.0n 0.9v 235.025n 0v 236.0n 0v 236.025n 0.9v 238.0n 0.9v 238.025n 0v 239.0n 0v 239.025n 0.9v 241.0n 0.9v 241.025n 0v 242.0n 0v 242.025n 0.9v
+v12 W02<1> 0 pwl 0.0n 0.9v 1.0n 0.9v 1.025n 0v 3.0n 0v 3.025n 0.9v 4.0n 0.9v 4.025n 0v 6.0n 0v 6.025n 0.9v 7.0n 0.9v 7.025n 0v 9.0n 0v 9.025n 0.9v 10.0n 0.9v 10.025n 0v 12.0n 0v 12.025n 0.9v 13.0n 0.9v 13.025n 0v 15.0n 0v 15.025n 0.9v 16.0n 0.9v 16.025n 0v 18.0n 0v 18.025n 0.9v 19.0n 0.9v 19.025n 0v 21.0n 0v 21.025n 0.9v 22.0n 0.9v 22.025n 0v 24.0n 0v 24.025n 0.9v 25.0n 0.9v 25.025n 0v 27.0n 0v 27.025n 0.9v 28.0n 0.9v 28.025n 0v 30.0n 0v 30.025n 0.9v 31.0n 0.9v 31.025n 0v 33.0n 0v 33.025n 0.9v 34.0n 0.9v 34.025n 0v 36.0n 0v 36.025n 0.9v 37.0n 0.9v 37.025n 0v 39.0n 0v 39.025n 0.9v 40.0n 0.9v 40.025n 0v 42.0n 0v 42.025n 0.9v 43.0n 0.9v 43.025n 0v 45.0n 0v 45.025n 0.9v 46.0n 0.9v 46.025n 0v 48.0n 0v 48.025n 0.9v 49.0n 0.9v 49.025n 0v 51.0n 0v 51.025n 0.9v 52.0n 0.9v 52.025n 0v 54.0n 0v 54.025n 0.9v 55.0n 0.9v 55.025n 0v 57.0n 0v 57.025n 0.9v 58.0n 0.9v 58.025n 0v 60.0n 0v 60.025n 0.9v 61.0n 0.9v 61.025n 0v 63.0n 0v 63.025n 0.9v 64.0n 0.9v 64.025n 0v 66.0n 0v 66.025n 0.9v 67.0n 0.9v 67.025n 0v 69.0n 0v 69.025n 0.9v 70.0n 0.9v 70.025n 0v 72.0n 0v 72.025n 0.9v 73.0n 0.9v 73.025n 0v 75.0n 0v 75.025n 0.9v 76.0n 0.9v 76.025n 0v 78.0n 0v 78.025n 0.9v 79.0n 0.9v 79.025n 0v 81.0n 0v 81.025n 0.9v 82.0n 0.9v 82.025n 0v 84.0n 0v 84.025n 0.9v 85.0n 0.9v 85.025n 0v 87.0n 0v 87.025n 0.9v 88.0n 0.9v 88.025n 0v 90.0n 0v 90.025n 0.9v 91.0n 0.9v 91.025n 0v 93.0n 0v 93.025n 0.9v 94.0n 0.9v 94.025n 0v 96.0n 0v 96.025n 0.9v 97.0n 0.9v 97.025n 0v 99.0n 0v 99.025n 0.9v 100.0n 0.9v 100.025n 0v 102.0n 0v 102.025n 0.9v 103.0n 0.9v 103.025n 0v 105.0n 0v 105.025n 0.9v 106.0n 0.9v 106.025n 0v 108.0n 0v 108.025n 0.9v 109.0n 0.9v 109.025n 0v 111.0n 0v 111.025n 0.9v 112.0n 0.9v 112.025n 0v 114.0n 0v 114.025n 0.9v 115.0n 0.9v 115.025n 0v 117.0n 0v 117.025n 0.9v 118.0n 0.9v 118.025n 0v 120.0n 0v 120.025n 0.9v 121.0n 0.9v 121.025n 0v 123.0n 0v 123.025n 0.9v 124.0n 0.9v 124.025n 0v 126.0n 0v 126.025n 0.9v 127.0n 0.9v 127.025n 0v 129.0n 0v 129.025n 0.9v 130.0n 0.9v 130.025n 0v 132.0n 0v 132.025n 0.9v 133.0n 0.9v 133.025n 0v 135.0n 0v 135.025n 0.9v 136.0n 0.9v 136.025n 0v 138.0n 0v 138.025n 0.9v 139.0n 0.9v 139.025n 0v 141.0n 0v 141.025n 0.9v 142.0n 0.9v 142.025n 0v 144.0n 0v 144.025n 0.9v 145.0n 0.9v 145.025n 0v 147.0n 0v 147.025n 0.9v 148.0n 0.9v 148.025n 0v 150.0n 0v 150.025n 0.9v 151.0n 0.9v 151.025n 0v 153.0n 0v 153.025n 0.9v 154.0n 0.9v 154.025n 0v 156.0n 0v 156.025n 0.9v 157.0n 0.9v 157.025n 0v 159.0n 0v 159.025n 0.9v 160.0n 0.9v 160.025n 0v 162.0n 0v 162.025n 0.9v 163.0n 0.9v 163.025n 0v 165.0n 0v 165.025n 0.9v 166.0n 0.9v 166.025n 0v 168.0n 0v 168.025n 0.9v 169.0n 0.9v 169.025n 0v 171.0n 0v 171.025n 0.9v 172.0n 0.9v 172.025n 0v 174.0n 0v 174.025n 0.9v 175.0n 0.9v 175.025n 0v 177.0n 0v 177.025n 0.9v 178.0n 0.9v 178.025n 0v 180.0n 0v 180.025n 0.9v 181.0n 0.9v 181.025n 0v 183.0n 0v 183.025n 0.9v 184.0n 0.9v 184.025n 0v 186.0n 0v 186.025n 0.9v 187.0n 0.9v 187.025n 0v 189.0n 0v 189.025n 0.9v 190.0n 0.9v 190.025n 0v 192.0n 0v 192.025n 0.9v 193.0n 0.9v 193.025n 0v 195.0n 0v 195.025n 0.9v 196.0n 0.9v 196.025n 0v 198.0n 0v 198.025n 0.9v 199.0n 0.9v 199.025n 0v 201.0n 0v 201.025n 0.9v 202.0n 0.9v 202.025n 0v 204.0n 0v 204.025n 0.9v 205.0n 0.9v 205.025n 0v 207.0n 0v 207.025n 0.9v 208.0n 0.9v 208.025n 0v 210.0n 0v 210.025n 0.9v 211.0n 0.9v 211.025n 0v 213.0n 0v 213.025n 0.9v 214.0n 0.9v 214.025n 0v 216.0n 0v 216.025n 0.9v 217.0n 0.9v 217.025n 0v 219.0n 0v 219.025n 0.9v 220.0n 0.9v 220.025n 0v 222.0n 0v 222.025n 0.9v 223.0n 0.9v 223.025n 0v 225.0n 0v 225.025n 0.9v 226.0n 0.9v 226.025n 0v 228.0n 0v 228.025n 0.9v 229.0n 0.9v 229.025n 0v 231.0n 0v 231.025n 0.9v 232.0n 0.9v 232.025n 0v 234.0n 0v 234.025n 0.9v 235.0n 0.9v 235.025n 0v 237.0n 0v 237.025n 0.9v 238.0n 0.9v 238.025n 0v 240.0n 0v 240.025n 0.9v 241.0n 0.9v 241.025n 0v
+v13 W02<2> 0 pwl 0.0n 0.9v 1.0n 0.9v 1.025n 0v 3.0n 0v 3.025n 0.9v 4.0n 0.9v 4.025n 0v 6.0n 0v 6.025n 0.9v 7.0n 0.9v 7.025n 0v 9.0n 0v 9.025n 0.9v 10.0n 0.9v 10.025n 0v 12.0n 0v 12.025n 0.9v 13.0n 0.9v 13.025n 0v 15.0n 0v 15.025n 0.9v 16.0n 0.9v 16.025n 0v 18.0n 0v 18.025n 0.9v 19.0n 0.9v 19.025n 0v 21.0n 0v 21.025n 0.9v 22.0n 0.9v 22.025n 0v 24.0n 0v 24.025n 0.9v 25.0n 0.9v 25.025n 0v 27.0n 0v 27.025n 0.9v 28.0n 0.9v 28.025n 0v 30.0n 0v 30.025n 0.9v 31.0n 0.9v 31.025n 0v 33.0n 0v 33.025n 0.9v 34.0n 0.9v 34.025n 0v 36.0n 0v 36.025n 0.9v 37.0n 0.9v 37.025n 0v 39.0n 0v 39.025n 0.9v 40.0n 0.9v 40.025n 0v 42.0n 0v 42.025n 0.9v 43.0n 0.9v 43.025n 0v 45.0n 0v 45.025n 0.9v 46.0n 0.9v 46.025n 0v 48.0n 0v 48.025n 0.9v 49.0n 0.9v 49.025n 0v 51.0n 0v 51.025n 0.9v 52.0n 0.9v 52.025n 0v 54.0n 0v 54.025n 0.9v 55.0n 0.9v 55.025n 0v 57.0n 0v 57.025n 0.9v 58.0n 0.9v 58.025n 0v 60.0n 0v 60.025n 0.9v 61.0n 0.9v 61.025n 0v 63.0n 0v 63.025n 0.9v 64.0n 0.9v 64.025n 0v 66.0n 0v 66.025n 0.9v 67.0n 0.9v 67.025n 0v 69.0n 0v 69.025n 0.9v 70.0n 0.9v 70.025n 0v 72.0n 0v 72.025n 0.9v 73.0n 0.9v 73.025n 0v 75.0n 0v 75.025n 0.9v 76.0n 0.9v 76.025n 0v 78.0n 0v 78.025n 0.9v 79.0n 0.9v 79.025n 0v 81.0n 0v 81.025n 0.9v 82.0n 0.9v 82.025n 0v 84.0n 0v 84.025n 0.9v 85.0n 0.9v 85.025n 0v 87.0n 0v 87.025n 0.9v 88.0n 0.9v 88.025n 0v 90.0n 0v 90.025n 0.9v 91.0n 0.9v 91.025n 0v 93.0n 0v 93.025n 0.9v 94.0n 0.9v 94.025n 0v 96.0n 0v 96.025n 0.9v 97.0n 0.9v 97.025n 0v 99.0n 0v 99.025n 0.9v 100.0n 0.9v 100.025n 0v 102.0n 0v 102.025n 0.9v 103.0n 0.9v 103.025n 0v 105.0n 0v 105.025n 0.9v 106.0n 0.9v 106.025n 0v 108.0n 0v 108.025n 0.9v 109.0n 0.9v 109.025n 0v 111.0n 0v 111.025n 0.9v 112.0n 0.9v 112.025n 0v 114.0n 0v 114.025n 0.9v 115.0n 0.9v 115.025n 0v 117.0n 0v 117.025n 0.9v 118.0n 0.9v 118.025n 0v 120.0n 0v 120.025n 0.9v 121.0n 0.9v 121.025n 0v 123.0n 0v 123.025n 0.9v 124.0n 0.9v 124.025n 0v 126.0n 0v 126.025n 0.9v 127.0n 0.9v 127.025n 0v 129.0n 0v 129.025n 0.9v 130.0n 0.9v 130.025n 0v 132.0n 0v 132.025n 0.9v 133.0n 0.9v 133.025n 0v 135.0n 0v 135.025n 0.9v 136.0n 0.9v 136.025n 0v 138.0n 0v 138.025n 0.9v 139.0n 0.9v 139.025n 0v 141.0n 0v 141.025n 0.9v 142.0n 0.9v 142.025n 0v 144.0n 0v 144.025n 0.9v 145.0n 0.9v 145.025n 0v 147.0n 0v 147.025n 0.9v 148.0n 0.9v 148.025n 0v 150.0n 0v 150.025n 0.9v 151.0n 0.9v 151.025n 0v 153.0n 0v 153.025n 0.9v 154.0n 0.9v 154.025n 0v 156.0n 0v 156.025n 0.9v 157.0n 0.9v 157.025n 0v 159.0n 0v 159.025n 0.9v 160.0n 0.9v 160.025n 0v 162.0n 0v 162.025n 0.9v 163.0n 0.9v 163.025n 0v 165.0n 0v 165.025n 0.9v 166.0n 0.9v 166.025n 0v 168.0n 0v 168.025n 0.9v 169.0n 0.9v 169.025n 0v 171.0n 0v 171.025n 0.9v 172.0n 0.9v 172.025n 0v 174.0n 0v 174.025n 0.9v 175.0n 0.9v 175.025n 0v 177.0n 0v 177.025n 0.9v 178.0n 0.9v 178.025n 0v 180.0n 0v 180.025n 0.9v 181.0n 0.9v 181.025n 0v 183.0n 0v 183.025n 0.9v 184.0n 0.9v 184.025n 0v 186.0n 0v 186.025n 0.9v 187.0n 0.9v 187.025n 0v 189.0n 0v 189.025n 0.9v 190.0n 0.9v 190.025n 0v 192.0n 0v 192.025n 0.9v 193.0n 0.9v 193.025n 0v 195.0n 0v 195.025n 0.9v 196.0n 0.9v 196.025n 0v 198.0n 0v 198.025n 0.9v 199.0n 0.9v 199.025n 0v 201.0n 0v 201.025n 0.9v 202.0n 0.9v 202.025n 0v 204.0n 0v 204.025n 0.9v 205.0n 0.9v 205.025n 0v 207.0n 0v 207.025n 0.9v 208.0n 0.9v 208.025n 0v 210.0n 0v 210.025n 0.9v 211.0n 0.9v 211.025n 0v 213.0n 0v 213.025n 0.9v 214.0n 0.9v 214.025n 0v 216.0n 0v 216.025n 0.9v 217.0n 0.9v 217.025n 0v 219.0n 0v 219.025n 0.9v 220.0n 0.9v 220.025n 0v 222.0n 0v 222.025n 0.9v 223.0n 0.9v 223.025n 0v 225.0n 0v 225.025n 0.9v 226.0n 0.9v 226.025n 0v 228.0n 0v 228.025n 0.9v 229.0n 0.9v 229.025n 0v 231.0n 0v 231.025n 0.9v 232.0n 0.9v 232.025n 0v 234.0n 0v 234.025n 0.9v 235.0n 0.9v 235.025n 0v 237.0n 0v 237.025n 0.9v 238.0n 0.9v 238.025n 0v 240.0n 0v 240.025n 0.9v 241.0n 0.9v 241.025n 0v
+
+.OP
+.TRAN STEP=5p STOP=243.5n
+
+.MEAS Z0_at_0_0n FIND V(Z0<0>) AT=0.9n
+.MEAS Z1_at_0_0n FIND V(Z0<1>) AT=0.9n
+.MEAS BLANK0_0 PARAM 0
+.MEAS TEST0 PARAM 'abs(((Z0_at_0_0n >= 0.45) + (Z1_at_0_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_1_0n FIND V(Z0<0>) AT=1.9n
+.MEAS Z1_at_1_0n FIND V(Z0<1>) AT=1.9n
+.MEAS BLANK1_0 PARAM 0
+.MEAS TEST1 PARAM 'abs(((Z0_at_1_0n >= 0.45) + (Z1_at_1_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_2_0n FIND V(Z0<0>) AT=2.9n
+.MEAS Z1_at_2_0n FIND V(Z0<1>) AT=2.9n
+.MEAS BLANK2_0 PARAM 0
+.MEAS TEST2 PARAM 'abs(((Z0_at_2_0n >= 0.45) + (Z1_at_2_0n >= 0.45) * 2) - (3)) < 0.01'
+
+.MEAS Z0_at_3_0n FIND V(Z0<0>) AT=3.9n
+.MEAS Z1_at_3_0n FIND V(Z0<1>) AT=3.9n
+.MEAS BLANK3_0 PARAM 0
+.MEAS TEST3 PARAM 'abs(((Z0_at_3_0n >= 0.45) + (Z1_at_3_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_4_0n FIND V(Z0<0>) AT=4.9n
+.MEAS Z1_at_4_0n FIND V(Z0<1>) AT=4.9n
+.MEAS BLANK4_0 PARAM 0
+.MEAS TEST4 PARAM 'abs(((Z0_at_4_0n >= 0.45) + (Z1_at_4_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_5_0n FIND V(Z0<0>) AT=5.9n
+.MEAS Z1_at_5_0n FIND V(Z0<1>) AT=5.9n
+.MEAS BLANK5_0 PARAM 0
+.MEAS TEST5 PARAM 'abs(((Z0_at_5_0n >= 0.45) + (Z1_at_5_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_6_0n FIND V(Z0<0>) AT=6.9n
+.MEAS Z1_at_6_0n FIND V(Z0<1>) AT=6.9n
+.MEAS BLANK6_0 PARAM 0
+.MEAS TEST6 PARAM 'abs(((Z0_at_6_0n >= 0.45) + (Z1_at_6_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_7_0n FIND V(Z0<0>) AT=7.9n
+.MEAS Z1_at_7_0n FIND V(Z0<1>) AT=7.9n
+.MEAS BLANK7_0 PARAM 0
+.MEAS TEST7 PARAM 'abs(((Z0_at_7_0n >= 0.45) + (Z1_at_7_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_8_0n FIND V(Z0<0>) AT=8.9n
+.MEAS Z1_at_8_0n FIND V(Z0<1>) AT=8.9n
+.MEAS BLANK8_0 PARAM 0
+.MEAS TEST8 PARAM 'abs(((Z0_at_8_0n >= 0.45) + (Z1_at_8_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_9_0n FIND V(Z0<0>) AT=9.9n
+.MEAS Z1_at_9_0n FIND V(Z0<1>) AT=9.9n
+.MEAS BLANK9_0 PARAM 0
+.MEAS TEST9 PARAM 'abs(((Z0_at_9_0n >= 0.45) + (Z1_at_9_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_10_0n FIND V(Z0<0>) AT=10.9n
+.MEAS Z1_at_10_0n FIND V(Z0<1>) AT=10.9n
+.MEAS BLANK10_0 PARAM 0
+.MEAS TEST10 PARAM 'abs(((Z0_at_10_0n >= 0.45) + (Z1_at_10_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_11_0n FIND V(Z0<0>) AT=11.9n
+.MEAS Z1_at_11_0n FIND V(Z0<1>) AT=11.9n
+.MEAS BLANK11_0 PARAM 0
+.MEAS TEST11 PARAM 'abs(((Z0_at_11_0n >= 0.45) + (Z1_at_11_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_12_0n FIND V(Z0<0>) AT=12.9n
+.MEAS Z1_at_12_0n FIND V(Z0<1>) AT=12.9n
+.MEAS BLANK12_0 PARAM 0
+.MEAS TEST12 PARAM 'abs(((Z0_at_12_0n >= 0.45) + (Z1_at_12_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_13_0n FIND V(Z0<0>) AT=13.9n
+.MEAS Z1_at_13_0n FIND V(Z0<1>) AT=13.9n
+.MEAS BLANK13_0 PARAM 0
+.MEAS TEST13 PARAM 'abs(((Z0_at_13_0n >= 0.45) + (Z1_at_13_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_14_0n FIND V(Z0<0>) AT=14.9n
+.MEAS Z1_at_14_0n FIND V(Z0<1>) AT=14.9n
+.MEAS BLANK14_0 PARAM 0
+.MEAS TEST14 PARAM 'abs(((Z0_at_14_0n >= 0.45) + (Z1_at_14_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_15_0n FIND V(Z0<0>) AT=15.9n
+.MEAS Z1_at_15_0n FIND V(Z0<1>) AT=15.9n
+.MEAS BLANK15_0 PARAM 0
+.MEAS TEST15 PARAM 'abs(((Z0_at_15_0n >= 0.45) + (Z1_at_15_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_16_0n FIND V(Z0<0>) AT=16.9n
+.MEAS Z1_at_16_0n FIND V(Z0<1>) AT=16.9n
+.MEAS BLANK16_0 PARAM 0
+.MEAS TEST16 PARAM 'abs(((Z0_at_16_0n >= 0.45) + (Z1_at_16_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_17_0n FIND V(Z0<0>) AT=17.9n
+.MEAS Z1_at_17_0n FIND V(Z0<1>) AT=17.9n
+.MEAS BLANK17_0 PARAM 0
+.MEAS TEST17 PARAM 'abs(((Z0_at_17_0n >= 0.45) + (Z1_at_17_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_18_0n FIND V(Z0<0>) AT=18.9n
+.MEAS Z1_at_18_0n FIND V(Z0<1>) AT=18.9n
+.MEAS BLANK18_0 PARAM 0
+.MEAS TEST18 PARAM 'abs(((Z0_at_18_0n >= 0.45) + (Z1_at_18_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_19_0n FIND V(Z0<0>) AT=19.9n
+.MEAS Z1_at_19_0n FIND V(Z0<1>) AT=19.9n
+.MEAS BLANK19_0 PARAM 0
+.MEAS TEST19 PARAM 'abs(((Z0_at_19_0n >= 0.45) + (Z1_at_19_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_20_0n FIND V(Z0<0>) AT=20.9n
+.MEAS Z1_at_20_0n FIND V(Z0<1>) AT=20.9n
+.MEAS BLANK20_0 PARAM 0
+.MEAS TEST20 PARAM 'abs(((Z0_at_20_0n >= 0.45) + (Z1_at_20_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_21_0n FIND V(Z0<0>) AT=21.9n
+.MEAS Z1_at_21_0n FIND V(Z0<1>) AT=21.9n
+.MEAS BLANK21_0 PARAM 0
+.MEAS TEST21 PARAM 'abs(((Z0_at_21_0n >= 0.45) + (Z1_at_21_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_22_0n FIND V(Z0<0>) AT=22.9n
+.MEAS Z1_at_22_0n FIND V(Z0<1>) AT=22.9n
+.MEAS BLANK22_0 PARAM 0
+.MEAS TEST22 PARAM 'abs(((Z0_at_22_0n >= 0.45) + (Z1_at_22_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_23_0n FIND V(Z0<0>) AT=23.9n
+.MEAS Z1_at_23_0n FIND V(Z0<1>) AT=23.9n
+.MEAS BLANK23_0 PARAM 0
+.MEAS TEST23 PARAM 'abs(((Z0_at_23_0n >= 0.45) + (Z1_at_23_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_24_0n FIND V(Z0<0>) AT=24.9n
+.MEAS Z1_at_24_0n FIND V(Z0<1>) AT=24.9n
+.MEAS BLANK24_0 PARAM 0
+.MEAS TEST24 PARAM 'abs(((Z0_at_24_0n >= 0.45) + (Z1_at_24_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_25_0n FIND V(Z0<0>) AT=25.9n
+.MEAS Z1_at_25_0n FIND V(Z0<1>) AT=25.9n
+.MEAS BLANK25_0 PARAM 0
+.MEAS TEST25 PARAM 'abs(((Z0_at_25_0n >= 0.45) + (Z1_at_25_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_26_0n FIND V(Z0<0>) AT=26.9n
+.MEAS Z1_at_26_0n FIND V(Z0<1>) AT=26.9n
+.MEAS BLANK26_0 PARAM 0
+.MEAS TEST26 PARAM 'abs(((Z0_at_26_0n >= 0.45) + (Z1_at_26_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_27_0n FIND V(Z0<0>) AT=27.9n
+.MEAS Z1_at_27_0n FIND V(Z0<1>) AT=27.9n
+.MEAS BLANK27_0 PARAM 0
+.MEAS TEST27 PARAM 'abs(((Z0_at_27_0n >= 0.45) + (Z1_at_27_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_28_0n FIND V(Z0<0>) AT=28.9n
+.MEAS Z1_at_28_0n FIND V(Z0<1>) AT=28.9n
+.MEAS BLANK28_0 PARAM 0
+.MEAS TEST28 PARAM 'abs(((Z0_at_28_0n >= 0.45) + (Z1_at_28_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_29_0n FIND V(Z0<0>) AT=29.9n
+.MEAS Z1_at_29_0n FIND V(Z0<1>) AT=29.9n
+.MEAS BLANK29_0 PARAM 0
+.MEAS TEST29 PARAM 'abs(((Z0_at_29_0n >= 0.45) + (Z1_at_29_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_30_0n FIND V(Z0<0>) AT=30.9n
+.MEAS Z1_at_30_0n FIND V(Z0<1>) AT=30.9n
+.MEAS BLANK30_0 PARAM 0
+.MEAS TEST30 PARAM 'abs(((Z0_at_30_0n >= 0.45) + (Z1_at_30_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_31_0n FIND V(Z0<0>) AT=31.9n
+.MEAS Z1_at_31_0n FIND V(Z0<1>) AT=31.9n
+.MEAS BLANK31_0 PARAM 0
+.MEAS TEST31 PARAM 'abs(((Z0_at_31_0n >= 0.45) + (Z1_at_31_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_32_0n FIND V(Z0<0>) AT=32.9n
+.MEAS Z1_at_32_0n FIND V(Z0<1>) AT=32.9n
+.MEAS BLANK32_0 PARAM 0
+.MEAS TEST32 PARAM 'abs(((Z0_at_32_0n >= 0.45) + (Z1_at_32_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_33_0n FIND V(Z0<0>) AT=33.9n
+.MEAS Z1_at_33_0n FIND V(Z0<1>) AT=33.9n
+.MEAS BLANK33_0 PARAM 0
+.MEAS TEST33 PARAM 'abs(((Z0_at_33_0n >= 0.45) + (Z1_at_33_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_34_0n FIND V(Z0<0>) AT=34.9n
+.MEAS Z1_at_34_0n FIND V(Z0<1>) AT=34.9n
+.MEAS BLANK34_0 PARAM 0
+.MEAS TEST34 PARAM 'abs(((Z0_at_34_0n >= 0.45) + (Z1_at_34_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_35_0n FIND V(Z0<0>) AT=35.9n
+.MEAS Z1_at_35_0n FIND V(Z0<1>) AT=35.9n
+.MEAS BLANK35_0 PARAM 0
+.MEAS TEST35 PARAM 'abs(((Z0_at_35_0n >= 0.45) + (Z1_at_35_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_36_0n FIND V(Z0<0>) AT=36.9n
+.MEAS Z1_at_36_0n FIND V(Z0<1>) AT=36.9n
+.MEAS BLANK36_0 PARAM 0
+.MEAS TEST36 PARAM 'abs(((Z0_at_36_0n >= 0.45) + (Z1_at_36_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_37_0n FIND V(Z0<0>) AT=37.9n
+.MEAS Z1_at_37_0n FIND V(Z0<1>) AT=37.9n
+.MEAS BLANK37_0 PARAM 0
+.MEAS TEST37 PARAM 'abs(((Z0_at_37_0n >= 0.45) + (Z1_at_37_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_38_0n FIND V(Z0<0>) AT=38.9n
+.MEAS Z1_at_38_0n FIND V(Z0<1>) AT=38.9n
+.MEAS BLANK38_0 PARAM 0
+.MEAS TEST38 PARAM 'abs(((Z0_at_38_0n >= 0.45) + (Z1_at_38_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_39_0n FIND V(Z0<0>) AT=39.9n
+.MEAS Z1_at_39_0n FIND V(Z0<1>) AT=39.9n
+.MEAS BLANK39_0 PARAM 0
+.MEAS TEST39 PARAM 'abs(((Z0_at_39_0n >= 0.45) + (Z1_at_39_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_40_0n FIND V(Z0<0>) AT=40.9n
+.MEAS Z1_at_40_0n FIND V(Z0<1>) AT=40.9n
+.MEAS BLANK40_0 PARAM 0
+.MEAS TEST40 PARAM 'abs(((Z0_at_40_0n >= 0.45) + (Z1_at_40_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_41_0n FIND V(Z0<0>) AT=41.9n
+.MEAS Z1_at_41_0n FIND V(Z0<1>) AT=41.9n
+.MEAS BLANK41_0 PARAM 0
+.MEAS TEST41 PARAM 'abs(((Z0_at_41_0n >= 0.45) + (Z1_at_41_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_42_0n FIND V(Z0<0>) AT=42.9n
+.MEAS Z1_at_42_0n FIND V(Z0<1>) AT=42.9n
+.MEAS BLANK42_0 PARAM 0
+.MEAS TEST42 PARAM 'abs(((Z0_at_42_0n >= 0.45) + (Z1_at_42_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_43_0n FIND V(Z0<0>) AT=43.9n
+.MEAS Z1_at_43_0n FIND V(Z0<1>) AT=43.9n
+.MEAS BLANK43_0 PARAM 0
+.MEAS TEST43 PARAM 'abs(((Z0_at_43_0n >= 0.45) + (Z1_at_43_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_44_0n FIND V(Z0<0>) AT=44.9n
+.MEAS Z1_at_44_0n FIND V(Z0<1>) AT=44.9n
+.MEAS BLANK44_0 PARAM 0
+.MEAS TEST44 PARAM 'abs(((Z0_at_44_0n >= 0.45) + (Z1_at_44_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_45_0n FIND V(Z0<0>) AT=45.9n
+.MEAS Z1_at_45_0n FIND V(Z0<1>) AT=45.9n
+.MEAS BLANK45_0 PARAM 0
+.MEAS TEST45 PARAM 'abs(((Z0_at_45_0n >= 0.45) + (Z1_at_45_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_46_0n FIND V(Z0<0>) AT=46.9n
+.MEAS Z1_at_46_0n FIND V(Z0<1>) AT=46.9n
+.MEAS BLANK46_0 PARAM 0
+.MEAS TEST46 PARAM 'abs(((Z0_at_46_0n >= 0.45) + (Z1_at_46_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_47_0n FIND V(Z0<0>) AT=47.9n
+.MEAS Z1_at_47_0n FIND V(Z0<1>) AT=47.9n
+.MEAS BLANK47_0 PARAM 0
+.MEAS TEST47 PARAM 'abs(((Z0_at_47_0n >= 0.45) + (Z1_at_47_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_48_0n FIND V(Z0<0>) AT=48.9n
+.MEAS Z1_at_48_0n FIND V(Z0<1>) AT=48.9n
+.MEAS BLANK48_0 PARAM 0
+.MEAS TEST48 PARAM 'abs(((Z0_at_48_0n >= 0.45) + (Z1_at_48_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_49_0n FIND V(Z0<0>) AT=49.9n
+.MEAS Z1_at_49_0n FIND V(Z0<1>) AT=49.9n
+.MEAS BLANK49_0 PARAM 0
+.MEAS TEST49 PARAM 'abs(((Z0_at_49_0n >= 0.45) + (Z1_at_49_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_50_0n FIND V(Z0<0>) AT=50.9n
+.MEAS Z1_at_50_0n FIND V(Z0<1>) AT=50.9n
+.MEAS BLANK50_0 PARAM 0
+.MEAS TEST50 PARAM 'abs(((Z0_at_50_0n >= 0.45) + (Z1_at_50_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_51_0n FIND V(Z0<0>) AT=51.9n
+.MEAS Z1_at_51_0n FIND V(Z0<1>) AT=51.9n
+.MEAS BLANK51_0 PARAM 0
+.MEAS TEST51 PARAM 'abs(((Z0_at_51_0n >= 0.45) + (Z1_at_51_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_52_0n FIND V(Z0<0>) AT=52.9n
+.MEAS Z1_at_52_0n FIND V(Z0<1>) AT=52.9n
+.MEAS BLANK52_0 PARAM 0
+.MEAS TEST52 PARAM 'abs(((Z0_at_52_0n >= 0.45) + (Z1_at_52_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_53_0n FIND V(Z0<0>) AT=53.9n
+.MEAS Z1_at_53_0n FIND V(Z0<1>) AT=53.9n
+.MEAS BLANK53_0 PARAM 0
+.MEAS TEST53 PARAM 'abs(((Z0_at_53_0n >= 0.45) + (Z1_at_53_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_54_0n FIND V(Z0<0>) AT=54.9n
+.MEAS Z1_at_54_0n FIND V(Z0<1>) AT=54.9n
+.MEAS BLANK54_0 PARAM 0
+.MEAS TEST54 PARAM 'abs(((Z0_at_54_0n >= 0.45) + (Z1_at_54_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_55_0n FIND V(Z0<0>) AT=55.9n
+.MEAS Z1_at_55_0n FIND V(Z0<1>) AT=55.9n
+.MEAS BLANK55_0 PARAM 0
+.MEAS TEST55 PARAM 'abs(((Z0_at_55_0n >= 0.45) + (Z1_at_55_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_56_0n FIND V(Z0<0>) AT=56.9n
+.MEAS Z1_at_56_0n FIND V(Z0<1>) AT=56.9n
+.MEAS BLANK56_0 PARAM 0
+.MEAS TEST56 PARAM 'abs(((Z0_at_56_0n >= 0.45) + (Z1_at_56_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_57_0n FIND V(Z0<0>) AT=57.9n
+.MEAS Z1_at_57_0n FIND V(Z0<1>) AT=57.9n
+.MEAS BLANK57_0 PARAM 0
+.MEAS TEST57 PARAM 'abs(((Z0_at_57_0n >= 0.45) + (Z1_at_57_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_58_0n FIND V(Z0<0>) AT=58.9n
+.MEAS Z1_at_58_0n FIND V(Z0<1>) AT=58.9n
+.MEAS BLANK58_0 PARAM 0
+.MEAS TEST58 PARAM 'abs(((Z0_at_58_0n >= 0.45) + (Z1_at_58_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_59_0n FIND V(Z0<0>) AT=59.9n
+.MEAS Z1_at_59_0n FIND V(Z0<1>) AT=59.9n
+.MEAS BLANK59_0 PARAM 0
+.MEAS TEST59 PARAM 'abs(((Z0_at_59_0n >= 0.45) + (Z1_at_59_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_60_0n FIND V(Z0<0>) AT=60.9n
+.MEAS Z1_at_60_0n FIND V(Z0<1>) AT=60.9n
+.MEAS BLANK60_0 PARAM 0
+.MEAS TEST60 PARAM 'abs(((Z0_at_60_0n >= 0.45) + (Z1_at_60_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_61_0n FIND V(Z0<0>) AT=61.9n
+.MEAS Z1_at_61_0n FIND V(Z0<1>) AT=61.9n
+.MEAS BLANK61_0 PARAM 0
+.MEAS TEST61 PARAM 'abs(((Z0_at_61_0n >= 0.45) + (Z1_at_61_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_62_0n FIND V(Z0<0>) AT=62.9n
+.MEAS Z1_at_62_0n FIND V(Z0<1>) AT=62.9n
+.MEAS BLANK62_0 PARAM 0
+.MEAS TEST62 PARAM 'abs(((Z0_at_62_0n >= 0.45) + (Z1_at_62_0n >= 0.45) * 2) - (3)) < 0.01'
+
+.MEAS Z0_at_63_0n FIND V(Z0<0>) AT=63.9n
+.MEAS Z1_at_63_0n FIND V(Z0<1>) AT=63.9n
+.MEAS BLANK63_0 PARAM 0
+.MEAS TEST63 PARAM 'abs(((Z0_at_63_0n >= 0.45) + (Z1_at_63_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_64_0n FIND V(Z0<0>) AT=64.9n
+.MEAS Z1_at_64_0n FIND V(Z0<1>) AT=64.9n
+.MEAS BLANK64_0 PARAM 0
+.MEAS TEST64 PARAM 'abs(((Z0_at_64_0n >= 0.45) + (Z1_at_64_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_65_0n FIND V(Z0<0>) AT=65.9n
+.MEAS Z1_at_65_0n FIND V(Z0<1>) AT=65.9n
+.MEAS BLANK65_0 PARAM 0
+.MEAS TEST65 PARAM 'abs(((Z0_at_65_0n >= 0.45) + (Z1_at_65_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_66_0n FIND V(Z0<0>) AT=66.9n
+.MEAS Z1_at_66_0n FIND V(Z0<1>) AT=66.9n
+.MEAS BLANK66_0 PARAM 0
+.MEAS TEST66 PARAM 'abs(((Z0_at_66_0n >= 0.45) + (Z1_at_66_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_67_0n FIND V(Z0<0>) AT=67.9n
+.MEAS Z1_at_67_0n FIND V(Z0<1>) AT=67.9n
+.MEAS BLANK67_0 PARAM 0
+.MEAS TEST67 PARAM 'abs(((Z0_at_67_0n >= 0.45) + (Z1_at_67_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_68_0n FIND V(Z0<0>) AT=68.9n
+.MEAS Z1_at_68_0n FIND V(Z0<1>) AT=68.9n
+.MEAS BLANK68_0 PARAM 0
+.MEAS TEST68 PARAM 'abs(((Z0_at_68_0n >= 0.45) + (Z1_at_68_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_69_0n FIND V(Z0<0>) AT=69.9n
+.MEAS Z1_at_69_0n FIND V(Z0<1>) AT=69.9n
+.MEAS BLANK69_0 PARAM 0
+.MEAS TEST69 PARAM 'abs(((Z0_at_69_0n >= 0.45) + (Z1_at_69_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_70_0n FIND V(Z0<0>) AT=70.9n
+.MEAS Z1_at_70_0n FIND V(Z0<1>) AT=70.9n
+.MEAS BLANK70_0 PARAM 0
+.MEAS TEST70 PARAM 'abs(((Z0_at_70_0n >= 0.45) + (Z1_at_70_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_71_0n FIND V(Z0<0>) AT=71.9n
+.MEAS Z1_at_71_0n FIND V(Z0<1>) AT=71.9n
+.MEAS BLANK71_0 PARAM 0
+.MEAS TEST71 PARAM 'abs(((Z0_at_71_0n >= 0.45) + (Z1_at_71_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_72_0n FIND V(Z0<0>) AT=72.9n
+.MEAS Z1_at_72_0n FIND V(Z0<1>) AT=72.9n
+.MEAS BLANK72_0 PARAM 0
+.MEAS TEST72 PARAM 'abs(((Z0_at_72_0n >= 0.45) + (Z1_at_72_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_73_0n FIND V(Z0<0>) AT=73.9n
+.MEAS Z1_at_73_0n FIND V(Z0<1>) AT=73.9n
+.MEAS BLANK73_0 PARAM 0
+.MEAS TEST73 PARAM 'abs(((Z0_at_73_0n >= 0.45) + (Z1_at_73_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_74_0n FIND V(Z0<0>) AT=74.9n
+.MEAS Z1_at_74_0n FIND V(Z0<1>) AT=74.9n
+.MEAS BLANK74_0 PARAM 0
+.MEAS TEST74 PARAM 'abs(((Z0_at_74_0n >= 0.45) + (Z1_at_74_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_75_0n FIND V(Z0<0>) AT=75.9n
+.MEAS Z1_at_75_0n FIND V(Z0<1>) AT=75.9n
+.MEAS BLANK75_0 PARAM 0
+.MEAS TEST75 PARAM 'abs(((Z0_at_75_0n >= 0.45) + (Z1_at_75_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_76_0n FIND V(Z0<0>) AT=76.9n
+.MEAS Z1_at_76_0n FIND V(Z0<1>) AT=76.9n
+.MEAS BLANK76_0 PARAM 0
+.MEAS TEST76 PARAM 'abs(((Z0_at_76_0n >= 0.45) + (Z1_at_76_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_77_0n FIND V(Z0<0>) AT=77.9n
+.MEAS Z1_at_77_0n FIND V(Z0<1>) AT=77.9n
+.MEAS BLANK77_0 PARAM 0
+.MEAS TEST77 PARAM 'abs(((Z0_at_77_0n >= 0.45) + (Z1_at_77_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_78_0n FIND V(Z0<0>) AT=78.9n
+.MEAS Z1_at_78_0n FIND V(Z0<1>) AT=78.9n
+.MEAS BLANK78_0 PARAM 0
+.MEAS TEST78 PARAM 'abs(((Z0_at_78_0n >= 0.45) + (Z1_at_78_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_79_0n FIND V(Z0<0>) AT=79.9n
+.MEAS Z1_at_79_0n FIND V(Z0<1>) AT=79.9n
+.MEAS BLANK79_0 PARAM 0
+.MEAS TEST79 PARAM 'abs(((Z0_at_79_0n >= 0.45) + (Z1_at_79_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_80_0n FIND V(Z0<0>) AT=80.9n
+.MEAS Z1_at_80_0n FIND V(Z0<1>) AT=80.9n
+.MEAS BLANK80_0 PARAM 0
+.MEAS TEST80 PARAM 'abs(((Z0_at_80_0n >= 0.45) + (Z1_at_80_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_81_0n FIND V(Z0<0>) AT=81.9n
+.MEAS Z1_at_81_0n FIND V(Z0<1>) AT=81.9n
+.MEAS BLANK81_0 PARAM 0
+.MEAS TEST81 PARAM 'abs(((Z0_at_81_0n >= 0.45) + (Z1_at_81_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_82_0n FIND V(Z0<0>) AT=82.9n
+.MEAS Z1_at_82_0n FIND V(Z0<1>) AT=82.9n
+.MEAS BLANK82_0 PARAM 0
+.MEAS TEST82 PARAM 'abs(((Z0_at_82_0n >= 0.45) + (Z1_at_82_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_83_0n FIND V(Z0<0>) AT=83.9n
+.MEAS Z1_at_83_0n FIND V(Z0<1>) AT=83.9n
+.MEAS BLANK83_0 PARAM 0
+.MEAS TEST83 PARAM 'abs(((Z0_at_83_0n >= 0.45) + (Z1_at_83_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_84_0n FIND V(Z0<0>) AT=84.9n
+.MEAS Z1_at_84_0n FIND V(Z0<1>) AT=84.9n
+.MEAS BLANK84_0 PARAM 0
+.MEAS TEST84 PARAM 'abs(((Z0_at_84_0n >= 0.45) + (Z1_at_84_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_85_0n FIND V(Z0<0>) AT=85.9n
+.MEAS Z1_at_85_0n FIND V(Z0<1>) AT=85.9n
+.MEAS BLANK85_0 PARAM 0
+.MEAS TEST85 PARAM 'abs(((Z0_at_85_0n >= 0.45) + (Z1_at_85_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_86_0n FIND V(Z0<0>) AT=86.9n
+.MEAS Z1_at_86_0n FIND V(Z0<1>) AT=86.9n
+.MEAS BLANK86_0 PARAM 0
+.MEAS TEST86 PARAM 'abs(((Z0_at_86_0n >= 0.45) + (Z1_at_86_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_87_0n FIND V(Z0<0>) AT=87.9n
+.MEAS Z1_at_87_0n FIND V(Z0<1>) AT=87.9n
+.MEAS BLANK87_0 PARAM 0
+.MEAS TEST87 PARAM 'abs(((Z0_at_87_0n >= 0.45) + (Z1_at_87_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_88_0n FIND V(Z0<0>) AT=88.9n
+.MEAS Z1_at_88_0n FIND V(Z0<1>) AT=88.9n
+.MEAS BLANK88_0 PARAM 0
+.MEAS TEST88 PARAM 'abs(((Z0_at_88_0n >= 0.45) + (Z1_at_88_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_89_0n FIND V(Z0<0>) AT=89.9n
+.MEAS Z1_at_89_0n FIND V(Z0<1>) AT=89.9n
+.MEAS BLANK89_0 PARAM 0
+.MEAS TEST89 PARAM 'abs(((Z0_at_89_0n >= 0.45) + (Z1_at_89_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_90_0n FIND V(Z0<0>) AT=90.9n
+.MEAS Z1_at_90_0n FIND V(Z0<1>) AT=90.9n
+.MEAS BLANK90_0 PARAM 0
+.MEAS TEST90 PARAM 'abs(((Z0_at_90_0n >= 0.45) + (Z1_at_90_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_91_0n FIND V(Z0<0>) AT=91.9n
+.MEAS Z1_at_91_0n FIND V(Z0<1>) AT=91.9n
+.MEAS BLANK91_0 PARAM 0
+.MEAS TEST91 PARAM 'abs(((Z0_at_91_0n >= 0.45) + (Z1_at_91_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_92_0n FIND V(Z0<0>) AT=92.9n
+.MEAS Z1_at_92_0n FIND V(Z0<1>) AT=92.9n
+.MEAS BLANK92_0 PARAM 0
+.MEAS TEST92 PARAM 'abs(((Z0_at_92_0n >= 0.45) + (Z1_at_92_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_93_0n FIND V(Z0<0>) AT=93.9n
+.MEAS Z1_at_93_0n FIND V(Z0<1>) AT=93.9n
+.MEAS BLANK93_0 PARAM 0
+.MEAS TEST93 PARAM 'abs(((Z0_at_93_0n >= 0.45) + (Z1_at_93_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_94_0n FIND V(Z0<0>) AT=94.9n
+.MEAS Z1_at_94_0n FIND V(Z0<1>) AT=94.9n
+.MEAS BLANK94_0 PARAM 0
+.MEAS TEST94 PARAM 'abs(((Z0_at_94_0n >= 0.45) + (Z1_at_94_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_95_0n FIND V(Z0<0>) AT=95.9n
+.MEAS Z1_at_95_0n FIND V(Z0<1>) AT=95.9n
+.MEAS BLANK95_0 PARAM 0
+.MEAS TEST95 PARAM 'abs(((Z0_at_95_0n >= 0.45) + (Z1_at_95_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_96_0n FIND V(Z0<0>) AT=96.9n
+.MEAS Z1_at_96_0n FIND V(Z0<1>) AT=96.9n
+.MEAS BLANK96_0 PARAM 0
+.MEAS TEST96 PARAM 'abs(((Z0_at_96_0n >= 0.45) + (Z1_at_96_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_97_0n FIND V(Z0<0>) AT=97.9n
+.MEAS Z1_at_97_0n FIND V(Z0<1>) AT=97.9n
+.MEAS BLANK97_0 PARAM 0
+.MEAS TEST97 PARAM 'abs(((Z0_at_97_0n >= 0.45) + (Z1_at_97_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_98_0n FIND V(Z0<0>) AT=98.9n
+.MEAS Z1_at_98_0n FIND V(Z0<1>) AT=98.9n
+.MEAS BLANK98_0 PARAM 0
+.MEAS TEST98 PARAM 'abs(((Z0_at_98_0n >= 0.45) + (Z1_at_98_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_99_0n FIND V(Z0<0>) AT=99.9n
+.MEAS Z1_at_99_0n FIND V(Z0<1>) AT=99.9n
+.MEAS BLANK99_0 PARAM 0
+.MEAS TEST99 PARAM 'abs(((Z0_at_99_0n >= 0.45) + (Z1_at_99_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_100_0n FIND V(Z0<0>) AT=100.9n
+.MEAS Z1_at_100_0n FIND V(Z0<1>) AT=100.9n
+.MEAS BLANK100_0 PARAM 0
+.MEAS TEST100 PARAM 'abs(((Z0_at_100_0n >= 0.45) + (Z1_at_100_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_101_0n FIND V(Z0<0>) AT=101.9n
+.MEAS Z1_at_101_0n FIND V(Z0<1>) AT=101.9n
+.MEAS BLANK101_0 PARAM 0
+.MEAS TEST101 PARAM 'abs(((Z0_at_101_0n >= 0.45) + (Z1_at_101_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_102_0n FIND V(Z0<0>) AT=102.9n
+.MEAS Z1_at_102_0n FIND V(Z0<1>) AT=102.9n
+.MEAS BLANK102_0 PARAM 0
+.MEAS TEST102 PARAM 'abs(((Z0_at_102_0n >= 0.45) + (Z1_at_102_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_103_0n FIND V(Z0<0>) AT=103.9n
+.MEAS Z1_at_103_0n FIND V(Z0<1>) AT=103.9n
+.MEAS BLANK103_0 PARAM 0
+.MEAS TEST103 PARAM 'abs(((Z0_at_103_0n >= 0.45) + (Z1_at_103_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_104_0n FIND V(Z0<0>) AT=104.9n
+.MEAS Z1_at_104_0n FIND V(Z0<1>) AT=104.9n
+.MEAS BLANK104_0 PARAM 0
+.MEAS TEST104 PARAM 'abs(((Z0_at_104_0n >= 0.45) + (Z1_at_104_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_105_0n FIND V(Z0<0>) AT=105.9n
+.MEAS Z1_at_105_0n FIND V(Z0<1>) AT=105.9n
+.MEAS BLANK105_0 PARAM 0
+.MEAS TEST105 PARAM 'abs(((Z0_at_105_0n >= 0.45) + (Z1_at_105_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_106_0n FIND V(Z0<0>) AT=106.9n
+.MEAS Z1_at_106_0n FIND V(Z0<1>) AT=106.9n
+.MEAS BLANK106_0 PARAM 0
+.MEAS TEST106 PARAM 'abs(((Z0_at_106_0n >= 0.45) + (Z1_at_106_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_107_0n FIND V(Z0<0>) AT=107.9n
+.MEAS Z1_at_107_0n FIND V(Z0<1>) AT=107.9n
+.MEAS BLANK107_0 PARAM 0
+.MEAS TEST107 PARAM 'abs(((Z0_at_107_0n >= 0.45) + (Z1_at_107_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_108_0n FIND V(Z0<0>) AT=108.9n
+.MEAS Z1_at_108_0n FIND V(Z0<1>) AT=108.9n
+.MEAS BLANK108_0 PARAM 0
+.MEAS TEST108 PARAM 'abs(((Z0_at_108_0n >= 0.45) + (Z1_at_108_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_109_0n FIND V(Z0<0>) AT=109.9n
+.MEAS Z1_at_109_0n FIND V(Z0<1>) AT=109.9n
+.MEAS BLANK109_0 PARAM 0
+.MEAS TEST109 PARAM 'abs(((Z0_at_109_0n >= 0.45) + (Z1_at_109_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_110_0n FIND V(Z0<0>) AT=110.9n
+.MEAS Z1_at_110_0n FIND V(Z0<1>) AT=110.9n
+.MEAS BLANK110_0 PARAM 0
+.MEAS TEST110 PARAM 'abs(((Z0_at_110_0n >= 0.45) + (Z1_at_110_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_111_0n FIND V(Z0<0>) AT=111.9n
+.MEAS Z1_at_111_0n FIND V(Z0<1>) AT=111.9n
+.MEAS BLANK111_0 PARAM 0
+.MEAS TEST111 PARAM 'abs(((Z0_at_111_0n >= 0.45) + (Z1_at_111_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_112_0n FIND V(Z0<0>) AT=112.9n
+.MEAS Z1_at_112_0n FIND V(Z0<1>) AT=112.9n
+.MEAS BLANK112_0 PARAM 0
+.MEAS TEST112 PARAM 'abs(((Z0_at_112_0n >= 0.45) + (Z1_at_112_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_113_0n FIND V(Z0<0>) AT=113.9n
+.MEAS Z1_at_113_0n FIND V(Z0<1>) AT=113.9n
+.MEAS BLANK113_0 PARAM 0
+.MEAS TEST113 PARAM 'abs(((Z0_at_113_0n >= 0.45) + (Z1_at_113_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_114_0n FIND V(Z0<0>) AT=114.9n
+.MEAS Z1_at_114_0n FIND V(Z0<1>) AT=114.9n
+.MEAS BLANK114_0 PARAM 0
+.MEAS TEST114 PARAM 'abs(((Z0_at_114_0n >= 0.45) + (Z1_at_114_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_115_0n FIND V(Z0<0>) AT=115.9n
+.MEAS Z1_at_115_0n FIND V(Z0<1>) AT=115.9n
+.MEAS BLANK115_0 PARAM 0
+.MEAS TEST115 PARAM 'abs(((Z0_at_115_0n >= 0.45) + (Z1_at_115_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_116_0n FIND V(Z0<0>) AT=116.9n
+.MEAS Z1_at_116_0n FIND V(Z0<1>) AT=116.9n
+.MEAS BLANK116_0 PARAM 0
+.MEAS TEST116 PARAM 'abs(((Z0_at_116_0n >= 0.45) + (Z1_at_116_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_117_0n FIND V(Z0<0>) AT=117.9n
+.MEAS Z1_at_117_0n FIND V(Z0<1>) AT=117.9n
+.MEAS BLANK117_0 PARAM 0
+.MEAS TEST117 PARAM 'abs(((Z0_at_117_0n >= 0.45) + (Z1_at_117_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_118_0n FIND V(Z0<0>) AT=118.9n
+.MEAS Z1_at_118_0n FIND V(Z0<1>) AT=118.9n
+.MEAS BLANK118_0 PARAM 0
+.MEAS TEST118 PARAM 'abs(((Z0_at_118_0n >= 0.45) + (Z1_at_118_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_119_0n FIND V(Z0<0>) AT=119.9n
+.MEAS Z1_at_119_0n FIND V(Z0<1>) AT=119.9n
+.MEAS BLANK119_0 PARAM 0
+.MEAS TEST119 PARAM 'abs(((Z0_at_119_0n >= 0.45) + (Z1_at_119_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_120_0n FIND V(Z0<0>) AT=120.9n
+.MEAS Z1_at_120_0n FIND V(Z0<1>) AT=120.9n
+.MEAS BLANK120_0 PARAM 0
+.MEAS TEST120 PARAM 'abs(((Z0_at_120_0n >= 0.45) + (Z1_at_120_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_121_0n FIND V(Z0<0>) AT=121.9n
+.MEAS Z1_at_121_0n FIND V(Z0<1>) AT=121.9n
+.MEAS BLANK121_0 PARAM 0
+.MEAS TEST121 PARAM 'abs(((Z0_at_121_0n >= 0.45) + (Z1_at_121_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_122_0n FIND V(Z0<0>) AT=122.9n
+.MEAS Z1_at_122_0n FIND V(Z0<1>) AT=122.9n
+.MEAS BLANK122_0 PARAM 0
+.MEAS TEST122 PARAM 'abs(((Z0_at_122_0n >= 0.45) + (Z1_at_122_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_123_0n FIND V(Z0<0>) AT=123.9n
+.MEAS Z1_at_123_0n FIND V(Z0<1>) AT=123.9n
+.MEAS BLANK123_0 PARAM 0
+.MEAS TEST123 PARAM 'abs(((Z0_at_123_0n >= 0.45) + (Z1_at_123_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_124_0n FIND V(Z0<0>) AT=124.9n
+.MEAS Z1_at_124_0n FIND V(Z0<1>) AT=124.9n
+.MEAS BLANK124_0 PARAM 0
+.MEAS TEST124 PARAM 'abs(((Z0_at_124_0n >= 0.45) + (Z1_at_124_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_125_0n FIND V(Z0<0>) AT=125.9n
+.MEAS Z1_at_125_0n FIND V(Z0<1>) AT=125.9n
+.MEAS BLANK125_0 PARAM 0
+.MEAS TEST125 PARAM 'abs(((Z0_at_125_0n >= 0.45) + (Z1_at_125_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_126_0n FIND V(Z0<0>) AT=126.9n
+.MEAS Z1_at_126_0n FIND V(Z0<1>) AT=126.9n
+.MEAS BLANK126_0 PARAM 0
+.MEAS TEST126 PARAM 'abs(((Z0_at_126_0n >= 0.45) + (Z1_at_126_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_127_0n FIND V(Z0<0>) AT=127.9n
+.MEAS Z1_at_127_0n FIND V(Z0<1>) AT=127.9n
+.MEAS BLANK127_0 PARAM 0
+.MEAS TEST127 PARAM 'abs(((Z0_at_127_0n >= 0.45) + (Z1_at_127_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_128_0n FIND V(Z0<0>) AT=128.9n
+.MEAS Z1_at_128_0n FIND V(Z0<1>) AT=128.9n
+.MEAS BLANK128_0 PARAM 0
+.MEAS TEST128 PARAM 'abs(((Z0_at_128_0n >= 0.45) + (Z1_at_128_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_129_0n FIND V(Z0<0>) AT=129.9n
+.MEAS Z1_at_129_0n FIND V(Z0<1>) AT=129.9n
+.MEAS BLANK129_0 PARAM 0
+.MEAS TEST129 PARAM 'abs(((Z0_at_129_0n >= 0.45) + (Z1_at_129_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_130_0n FIND V(Z0<0>) AT=130.9n
+.MEAS Z1_at_130_0n FIND V(Z0<1>) AT=130.9n
+.MEAS BLANK130_0 PARAM 0
+.MEAS TEST130 PARAM 'abs(((Z0_at_130_0n >= 0.45) + (Z1_at_130_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_131_0n FIND V(Z0<0>) AT=131.9n
+.MEAS Z1_at_131_0n FIND V(Z0<1>) AT=131.9n
+.MEAS BLANK131_0 PARAM 0
+.MEAS TEST131 PARAM 'abs(((Z0_at_131_0n >= 0.45) + (Z1_at_131_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_132_0n FIND V(Z0<0>) AT=132.9n
+.MEAS Z1_at_132_0n FIND V(Z0<1>) AT=132.9n
+.MEAS BLANK132_0 PARAM 0
+.MEAS TEST132 PARAM 'abs(((Z0_at_132_0n >= 0.45) + (Z1_at_132_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_133_0n FIND V(Z0<0>) AT=133.9n
+.MEAS Z1_at_133_0n FIND V(Z0<1>) AT=133.9n
+.MEAS BLANK133_0 PARAM 0
+.MEAS TEST133 PARAM 'abs(((Z0_at_133_0n >= 0.45) + (Z1_at_133_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_134_0n FIND V(Z0<0>) AT=134.9n
+.MEAS Z1_at_134_0n FIND V(Z0<1>) AT=134.9n
+.MEAS BLANK134_0 PARAM 0
+.MEAS TEST134 PARAM 'abs(((Z0_at_134_0n >= 0.45) + (Z1_at_134_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_135_0n FIND V(Z0<0>) AT=135.9n
+.MEAS Z1_at_135_0n FIND V(Z0<1>) AT=135.9n
+.MEAS BLANK135_0 PARAM 0
+.MEAS TEST135 PARAM 'abs(((Z0_at_135_0n >= 0.45) + (Z1_at_135_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_136_0n FIND V(Z0<0>) AT=136.9n
+.MEAS Z1_at_136_0n FIND V(Z0<1>) AT=136.9n
+.MEAS BLANK136_0 PARAM 0
+.MEAS TEST136 PARAM 'abs(((Z0_at_136_0n >= 0.45) + (Z1_at_136_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_137_0n FIND V(Z0<0>) AT=137.9n
+.MEAS Z1_at_137_0n FIND V(Z0<1>) AT=137.9n
+.MEAS BLANK137_0 PARAM 0
+.MEAS TEST137 PARAM 'abs(((Z0_at_137_0n >= 0.45) + (Z1_at_137_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_138_0n FIND V(Z0<0>) AT=138.9n
+.MEAS Z1_at_138_0n FIND V(Z0<1>) AT=138.9n
+.MEAS BLANK138_0 PARAM 0
+.MEAS TEST138 PARAM 'abs(((Z0_at_138_0n >= 0.45) + (Z1_at_138_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_139_0n FIND V(Z0<0>) AT=139.9n
+.MEAS Z1_at_139_0n FIND V(Z0<1>) AT=139.9n
+.MEAS BLANK139_0 PARAM 0
+.MEAS TEST139 PARAM 'abs(((Z0_at_139_0n >= 0.45) + (Z1_at_139_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_140_0n FIND V(Z0<0>) AT=140.9n
+.MEAS Z1_at_140_0n FIND V(Z0<1>) AT=140.9n
+.MEAS BLANK140_0 PARAM 0
+.MEAS TEST140 PARAM 'abs(((Z0_at_140_0n >= 0.45) + (Z1_at_140_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_141_0n FIND V(Z0<0>) AT=141.9n
+.MEAS Z1_at_141_0n FIND V(Z0<1>) AT=141.9n
+.MEAS BLANK141_0 PARAM 0
+.MEAS TEST141 PARAM 'abs(((Z0_at_141_0n >= 0.45) + (Z1_at_141_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_142_0n FIND V(Z0<0>) AT=142.9n
+.MEAS Z1_at_142_0n FIND V(Z0<1>) AT=142.9n
+.MEAS BLANK142_0 PARAM 0
+.MEAS TEST142 PARAM 'abs(((Z0_at_142_0n >= 0.45) + (Z1_at_142_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_143_0n FIND V(Z0<0>) AT=143.9n
+.MEAS Z1_at_143_0n FIND V(Z0<1>) AT=143.9n
+.MEAS BLANK143_0 PARAM 0
+.MEAS TEST143 PARAM 'abs(((Z0_at_143_0n >= 0.45) + (Z1_at_143_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_144_0n FIND V(Z0<0>) AT=144.9n
+.MEAS Z1_at_144_0n FIND V(Z0<1>) AT=144.9n
+.MEAS BLANK144_0 PARAM 0
+.MEAS TEST144 PARAM 'abs(((Z0_at_144_0n >= 0.45) + (Z1_at_144_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_145_0n FIND V(Z0<0>) AT=145.9n
+.MEAS Z1_at_145_0n FIND V(Z0<1>) AT=145.9n
+.MEAS BLANK145_0 PARAM 0
+.MEAS TEST145 PARAM 'abs(((Z0_at_145_0n >= 0.45) + (Z1_at_145_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_146_0n FIND V(Z0<0>) AT=146.9n
+.MEAS Z1_at_146_0n FIND V(Z0<1>) AT=146.9n
+.MEAS BLANK146_0 PARAM 0
+.MEAS TEST146 PARAM 'abs(((Z0_at_146_0n >= 0.45) + (Z1_at_146_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_147_0n FIND V(Z0<0>) AT=147.9n
+.MEAS Z1_at_147_0n FIND V(Z0<1>) AT=147.9n
+.MEAS BLANK147_0 PARAM 0
+.MEAS TEST147 PARAM 'abs(((Z0_at_147_0n >= 0.45) + (Z1_at_147_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_148_0n FIND V(Z0<0>) AT=148.9n
+.MEAS Z1_at_148_0n FIND V(Z0<1>) AT=148.9n
+.MEAS BLANK148_0 PARAM 0
+.MEAS TEST148 PARAM 'abs(((Z0_at_148_0n >= 0.45) + (Z1_at_148_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_149_0n FIND V(Z0<0>) AT=149.9n
+.MEAS Z1_at_149_0n FIND V(Z0<1>) AT=149.9n
+.MEAS BLANK149_0 PARAM 0
+.MEAS TEST149 PARAM 'abs(((Z0_at_149_0n >= 0.45) + (Z1_at_149_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_150_0n FIND V(Z0<0>) AT=150.9n
+.MEAS Z1_at_150_0n FIND V(Z0<1>) AT=150.9n
+.MEAS BLANK150_0 PARAM 0
+.MEAS TEST150 PARAM 'abs(((Z0_at_150_0n >= 0.45) + (Z1_at_150_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_151_0n FIND V(Z0<0>) AT=151.9n
+.MEAS Z1_at_151_0n FIND V(Z0<1>) AT=151.9n
+.MEAS BLANK151_0 PARAM 0
+.MEAS TEST151 PARAM 'abs(((Z0_at_151_0n >= 0.45) + (Z1_at_151_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_152_0n FIND V(Z0<0>) AT=152.9n
+.MEAS Z1_at_152_0n FIND V(Z0<1>) AT=152.9n
+.MEAS BLANK152_0 PARAM 0
+.MEAS TEST152 PARAM 'abs(((Z0_at_152_0n >= 0.45) + (Z1_at_152_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_153_0n FIND V(Z0<0>) AT=153.9n
+.MEAS Z1_at_153_0n FIND V(Z0<1>) AT=153.9n
+.MEAS BLANK153_0 PARAM 0
+.MEAS TEST153 PARAM 'abs(((Z0_at_153_0n >= 0.45) + (Z1_at_153_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_154_0n FIND V(Z0<0>) AT=154.9n
+.MEAS Z1_at_154_0n FIND V(Z0<1>) AT=154.9n
+.MEAS BLANK154_0 PARAM 0
+.MEAS TEST154 PARAM 'abs(((Z0_at_154_0n >= 0.45) + (Z1_at_154_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_155_0n FIND V(Z0<0>) AT=155.9n
+.MEAS Z1_at_155_0n FIND V(Z0<1>) AT=155.9n
+.MEAS BLANK155_0 PARAM 0
+.MEAS TEST155 PARAM 'abs(((Z0_at_155_0n >= 0.45) + (Z1_at_155_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_156_0n FIND V(Z0<0>) AT=156.9n
+.MEAS Z1_at_156_0n FIND V(Z0<1>) AT=156.9n
+.MEAS BLANK156_0 PARAM 0
+.MEAS TEST156 PARAM 'abs(((Z0_at_156_0n >= 0.45) + (Z1_at_156_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_157_0n FIND V(Z0<0>) AT=157.9n
+.MEAS Z1_at_157_0n FIND V(Z0<1>) AT=157.9n
+.MEAS BLANK157_0 PARAM 0
+.MEAS TEST157 PARAM 'abs(((Z0_at_157_0n >= 0.45) + (Z1_at_157_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_158_0n FIND V(Z0<0>) AT=158.9n
+.MEAS Z1_at_158_0n FIND V(Z0<1>) AT=158.9n
+.MEAS BLANK158_0 PARAM 0
+.MEAS TEST158 PARAM 'abs(((Z0_at_158_0n >= 0.45) + (Z1_at_158_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_159_0n FIND V(Z0<0>) AT=159.9n
+.MEAS Z1_at_159_0n FIND V(Z0<1>) AT=159.9n
+.MEAS BLANK159_0 PARAM 0
+.MEAS TEST159 PARAM 'abs(((Z0_at_159_0n >= 0.45) + (Z1_at_159_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_160_0n FIND V(Z0<0>) AT=160.9n
+.MEAS Z1_at_160_0n FIND V(Z0<1>) AT=160.9n
+.MEAS BLANK160_0 PARAM 0
+.MEAS TEST160 PARAM 'abs(((Z0_at_160_0n >= 0.45) + (Z1_at_160_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_161_0n FIND V(Z0<0>) AT=161.9n
+.MEAS Z1_at_161_0n FIND V(Z0<1>) AT=161.9n
+.MEAS BLANK161_0 PARAM 0
+.MEAS TEST161 PARAM 'abs(((Z0_at_161_0n >= 0.45) + (Z1_at_161_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_162_0n FIND V(Z0<0>) AT=162.9n
+.MEAS Z1_at_162_0n FIND V(Z0<1>) AT=162.9n
+.MEAS BLANK162_0 PARAM 0
+.MEAS TEST162 PARAM 'abs(((Z0_at_162_0n >= 0.45) + (Z1_at_162_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_163_0n FIND V(Z0<0>) AT=163.9n
+.MEAS Z1_at_163_0n FIND V(Z0<1>) AT=163.9n
+.MEAS BLANK163_0 PARAM 0
+.MEAS TEST163 PARAM 'abs(((Z0_at_163_0n >= 0.45) + (Z1_at_163_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_164_0n FIND V(Z0<0>) AT=164.9n
+.MEAS Z1_at_164_0n FIND V(Z0<1>) AT=164.9n
+.MEAS BLANK164_0 PARAM 0
+.MEAS TEST164 PARAM 'abs(((Z0_at_164_0n >= 0.45) + (Z1_at_164_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_165_0n FIND V(Z0<0>) AT=165.9n
+.MEAS Z1_at_165_0n FIND V(Z0<1>) AT=165.9n
+.MEAS BLANK165_0 PARAM 0
+.MEAS TEST165 PARAM 'abs(((Z0_at_165_0n >= 0.45) + (Z1_at_165_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_166_0n FIND V(Z0<0>) AT=166.9n
+.MEAS Z1_at_166_0n FIND V(Z0<1>) AT=166.9n
+.MEAS BLANK166_0 PARAM 0
+.MEAS TEST166 PARAM 'abs(((Z0_at_166_0n >= 0.45) + (Z1_at_166_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_167_0n FIND V(Z0<0>) AT=167.9n
+.MEAS Z1_at_167_0n FIND V(Z0<1>) AT=167.9n
+.MEAS BLANK167_0 PARAM 0
+.MEAS TEST167 PARAM 'abs(((Z0_at_167_0n >= 0.45) + (Z1_at_167_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_168_0n FIND V(Z0<0>) AT=168.9n
+.MEAS Z1_at_168_0n FIND V(Z0<1>) AT=168.9n
+.MEAS BLANK168_0 PARAM 0
+.MEAS TEST168 PARAM 'abs(((Z0_at_168_0n >= 0.45) + (Z1_at_168_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_169_0n FIND V(Z0<0>) AT=169.9n
+.MEAS Z1_at_169_0n FIND V(Z0<1>) AT=169.9n
+.MEAS BLANK169_0 PARAM 0
+.MEAS TEST169 PARAM 'abs(((Z0_at_169_0n >= 0.45) + (Z1_at_169_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_170_0n FIND V(Z0<0>) AT=170.9n
+.MEAS Z1_at_170_0n FIND V(Z0<1>) AT=170.9n
+.MEAS BLANK170_0 PARAM 0
+.MEAS TEST170 PARAM 'abs(((Z0_at_170_0n >= 0.45) + (Z1_at_170_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_171_0n FIND V(Z0<0>) AT=171.9n
+.MEAS Z1_at_171_0n FIND V(Z0<1>) AT=171.9n
+.MEAS BLANK171_0 PARAM 0
+.MEAS TEST171 PARAM 'abs(((Z0_at_171_0n >= 0.45) + (Z1_at_171_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_172_0n FIND V(Z0<0>) AT=172.9n
+.MEAS Z1_at_172_0n FIND V(Z0<1>) AT=172.9n
+.MEAS BLANK172_0 PARAM 0
+.MEAS TEST172 PARAM 'abs(((Z0_at_172_0n >= 0.45) + (Z1_at_172_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_173_0n FIND V(Z0<0>) AT=173.9n
+.MEAS Z1_at_173_0n FIND V(Z0<1>) AT=173.9n
+.MEAS BLANK173_0 PARAM 0
+.MEAS TEST173 PARAM 'abs(((Z0_at_173_0n >= 0.45) + (Z1_at_173_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_174_0n FIND V(Z0<0>) AT=174.9n
+.MEAS Z1_at_174_0n FIND V(Z0<1>) AT=174.9n
+.MEAS BLANK174_0 PARAM 0
+.MEAS TEST174 PARAM 'abs(((Z0_at_174_0n >= 0.45) + (Z1_at_174_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_175_0n FIND V(Z0<0>) AT=175.9n
+.MEAS Z1_at_175_0n FIND V(Z0<1>) AT=175.9n
+.MEAS BLANK175_0 PARAM 0
+.MEAS TEST175 PARAM 'abs(((Z0_at_175_0n >= 0.45) + (Z1_at_175_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_176_0n FIND V(Z0<0>) AT=176.9n
+.MEAS Z1_at_176_0n FIND V(Z0<1>) AT=176.9n
+.MEAS BLANK176_0 PARAM 0
+.MEAS TEST176 PARAM 'abs(((Z0_at_176_0n >= 0.45) + (Z1_at_176_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_177_0n FIND V(Z0<0>) AT=177.9n
+.MEAS Z1_at_177_0n FIND V(Z0<1>) AT=177.9n
+.MEAS BLANK177_0 PARAM 0
+.MEAS TEST177 PARAM 'abs(((Z0_at_177_0n >= 0.45) + (Z1_at_177_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_178_0n FIND V(Z0<0>) AT=178.9n
+.MEAS Z1_at_178_0n FIND V(Z0<1>) AT=178.9n
+.MEAS BLANK178_0 PARAM 0
+.MEAS TEST178 PARAM 'abs(((Z0_at_178_0n >= 0.45) + (Z1_at_178_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_179_0n FIND V(Z0<0>) AT=179.9n
+.MEAS Z1_at_179_0n FIND V(Z0<1>) AT=179.9n
+.MEAS BLANK179_0 PARAM 0
+.MEAS TEST179 PARAM 'abs(((Z0_at_179_0n >= 0.45) + (Z1_at_179_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_180_0n FIND V(Z0<0>) AT=180.9n
+.MEAS Z1_at_180_0n FIND V(Z0<1>) AT=180.9n
+.MEAS BLANK180_0 PARAM 0
+.MEAS TEST180 PARAM 'abs(((Z0_at_180_0n >= 0.45) + (Z1_at_180_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_181_0n FIND V(Z0<0>) AT=181.9n
+.MEAS Z1_at_181_0n FIND V(Z0<1>) AT=181.9n
+.MEAS BLANK181_0 PARAM 0
+.MEAS TEST181 PARAM 'abs(((Z0_at_181_0n >= 0.45) + (Z1_at_181_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_182_0n FIND V(Z0<0>) AT=182.9n
+.MEAS Z1_at_182_0n FIND V(Z0<1>) AT=182.9n
+.MEAS BLANK182_0 PARAM 0
+.MEAS TEST182 PARAM 'abs(((Z0_at_182_0n >= 0.45) + (Z1_at_182_0n >= 0.45) * 2) - (3)) < 0.01'
+
+.MEAS Z0_at_183_0n FIND V(Z0<0>) AT=183.9n
+.MEAS Z1_at_183_0n FIND V(Z0<1>) AT=183.9n
+.MEAS BLANK183_0 PARAM 0
+.MEAS TEST183 PARAM 'abs(((Z0_at_183_0n >= 0.45) + (Z1_at_183_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_184_0n FIND V(Z0<0>) AT=184.9n
+.MEAS Z1_at_184_0n FIND V(Z0<1>) AT=184.9n
+.MEAS BLANK184_0 PARAM 0
+.MEAS TEST184 PARAM 'abs(((Z0_at_184_0n >= 0.45) + (Z1_at_184_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_185_0n FIND V(Z0<0>) AT=185.9n
+.MEAS Z1_at_185_0n FIND V(Z0<1>) AT=185.9n
+.MEAS BLANK185_0 PARAM 0
+.MEAS TEST185 PARAM 'abs(((Z0_at_185_0n >= 0.45) + (Z1_at_185_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_186_0n FIND V(Z0<0>) AT=186.9n
+.MEAS Z1_at_186_0n FIND V(Z0<1>) AT=186.9n
+.MEAS BLANK186_0 PARAM 0
+.MEAS TEST186 PARAM 'abs(((Z0_at_186_0n >= 0.45) + (Z1_at_186_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_187_0n FIND V(Z0<0>) AT=187.9n
+.MEAS Z1_at_187_0n FIND V(Z0<1>) AT=187.9n
+.MEAS BLANK187_0 PARAM 0
+.MEAS TEST187 PARAM 'abs(((Z0_at_187_0n >= 0.45) + (Z1_at_187_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_188_0n FIND V(Z0<0>) AT=188.9n
+.MEAS Z1_at_188_0n FIND V(Z0<1>) AT=188.9n
+.MEAS BLANK188_0 PARAM 0
+.MEAS TEST188 PARAM 'abs(((Z0_at_188_0n >= 0.45) + (Z1_at_188_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_189_0n FIND V(Z0<0>) AT=189.9n
+.MEAS Z1_at_189_0n FIND V(Z0<1>) AT=189.9n
+.MEAS BLANK189_0 PARAM 0
+.MEAS TEST189 PARAM 'abs(((Z0_at_189_0n >= 0.45) + (Z1_at_189_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_190_0n FIND V(Z0<0>) AT=190.9n
+.MEAS Z1_at_190_0n FIND V(Z0<1>) AT=190.9n
+.MEAS BLANK190_0 PARAM 0
+.MEAS TEST190 PARAM 'abs(((Z0_at_190_0n >= 0.45) + (Z1_at_190_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_191_0n FIND V(Z0<0>) AT=191.9n
+.MEAS Z1_at_191_0n FIND V(Z0<1>) AT=191.9n
+.MEAS BLANK191_0 PARAM 0
+.MEAS TEST191 PARAM 'abs(((Z0_at_191_0n >= 0.45) + (Z1_at_191_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_192_0n FIND V(Z0<0>) AT=192.9n
+.MEAS Z1_at_192_0n FIND V(Z0<1>) AT=192.9n
+.MEAS BLANK192_0 PARAM 0
+.MEAS TEST192 PARAM 'abs(((Z0_at_192_0n >= 0.45) + (Z1_at_192_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_193_0n FIND V(Z0<0>) AT=193.9n
+.MEAS Z1_at_193_0n FIND V(Z0<1>) AT=193.9n
+.MEAS BLANK193_0 PARAM 0
+.MEAS TEST193 PARAM 'abs(((Z0_at_193_0n >= 0.45) + (Z1_at_193_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_194_0n FIND V(Z0<0>) AT=194.9n
+.MEAS Z1_at_194_0n FIND V(Z0<1>) AT=194.9n
+.MEAS BLANK194_0 PARAM 0
+.MEAS TEST194 PARAM 'abs(((Z0_at_194_0n >= 0.45) + (Z1_at_194_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_195_0n FIND V(Z0<0>) AT=195.9n
+.MEAS Z1_at_195_0n FIND V(Z0<1>) AT=195.9n
+.MEAS BLANK195_0 PARAM 0
+.MEAS TEST195 PARAM 'abs(((Z0_at_195_0n >= 0.45) + (Z1_at_195_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_196_0n FIND V(Z0<0>) AT=196.9n
+.MEAS Z1_at_196_0n FIND V(Z0<1>) AT=196.9n
+.MEAS BLANK196_0 PARAM 0
+.MEAS TEST196 PARAM 'abs(((Z0_at_196_0n >= 0.45) + (Z1_at_196_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_197_0n FIND V(Z0<0>) AT=197.9n
+.MEAS Z1_at_197_0n FIND V(Z0<1>) AT=197.9n
+.MEAS BLANK197_0 PARAM 0
+.MEAS TEST197 PARAM 'abs(((Z0_at_197_0n >= 0.45) + (Z1_at_197_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_198_0n FIND V(Z0<0>) AT=198.9n
+.MEAS Z1_at_198_0n FIND V(Z0<1>) AT=198.9n
+.MEAS BLANK198_0 PARAM 0
+.MEAS TEST198 PARAM 'abs(((Z0_at_198_0n >= 0.45) + (Z1_at_198_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_199_0n FIND V(Z0<0>) AT=199.9n
+.MEAS Z1_at_199_0n FIND V(Z0<1>) AT=199.9n
+.MEAS BLANK199_0 PARAM 0
+.MEAS TEST199 PARAM 'abs(((Z0_at_199_0n >= 0.45) + (Z1_at_199_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_200_0n FIND V(Z0<0>) AT=200.9n
+.MEAS Z1_at_200_0n FIND V(Z0<1>) AT=200.9n
+.MEAS BLANK200_0 PARAM 0
+.MEAS TEST200 PARAM 'abs(((Z0_at_200_0n >= 0.45) + (Z1_at_200_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_201_0n FIND V(Z0<0>) AT=201.9n
+.MEAS Z1_at_201_0n FIND V(Z0<1>) AT=201.9n
+.MEAS BLANK201_0 PARAM 0
+.MEAS TEST201 PARAM 'abs(((Z0_at_201_0n >= 0.45) + (Z1_at_201_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_202_0n FIND V(Z0<0>) AT=202.9n
+.MEAS Z1_at_202_0n FIND V(Z0<1>) AT=202.9n
+.MEAS BLANK202_0 PARAM 0
+.MEAS TEST202 PARAM 'abs(((Z0_at_202_0n >= 0.45) + (Z1_at_202_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_203_0n FIND V(Z0<0>) AT=203.9n
+.MEAS Z1_at_203_0n FIND V(Z0<1>) AT=203.9n
+.MEAS BLANK203_0 PARAM 0
+.MEAS TEST203 PARAM 'abs(((Z0_at_203_0n >= 0.45) + (Z1_at_203_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_204_0n FIND V(Z0<0>) AT=204.9n
+.MEAS Z1_at_204_0n FIND V(Z0<1>) AT=204.9n
+.MEAS BLANK204_0 PARAM 0
+.MEAS TEST204 PARAM 'abs(((Z0_at_204_0n >= 0.45) + (Z1_at_204_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_205_0n FIND V(Z0<0>) AT=205.9n
+.MEAS Z1_at_205_0n FIND V(Z0<1>) AT=205.9n
+.MEAS BLANK205_0 PARAM 0
+.MEAS TEST205 PARAM 'abs(((Z0_at_205_0n >= 0.45) + (Z1_at_205_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_206_0n FIND V(Z0<0>) AT=206.9n
+.MEAS Z1_at_206_0n FIND V(Z0<1>) AT=206.9n
+.MEAS BLANK206_0 PARAM 0
+.MEAS TEST206 PARAM 'abs(((Z0_at_206_0n >= 0.45) + (Z1_at_206_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_207_0n FIND V(Z0<0>) AT=207.9n
+.MEAS Z1_at_207_0n FIND V(Z0<1>) AT=207.9n
+.MEAS BLANK207_0 PARAM 0
+.MEAS TEST207 PARAM 'abs(((Z0_at_207_0n >= 0.45) + (Z1_at_207_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_208_0n FIND V(Z0<0>) AT=208.9n
+.MEAS Z1_at_208_0n FIND V(Z0<1>) AT=208.9n
+.MEAS BLANK208_0 PARAM 0
+.MEAS TEST208 PARAM 'abs(((Z0_at_208_0n >= 0.45) + (Z1_at_208_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_209_0n FIND V(Z0<0>) AT=209.9n
+.MEAS Z1_at_209_0n FIND V(Z0<1>) AT=209.9n
+.MEAS BLANK209_0 PARAM 0
+.MEAS TEST209 PARAM 'abs(((Z0_at_209_0n >= 0.45) + (Z1_at_209_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_210_0n FIND V(Z0<0>) AT=210.9n
+.MEAS Z1_at_210_0n FIND V(Z0<1>) AT=210.9n
+.MEAS BLANK210_0 PARAM 0
+.MEAS TEST210 PARAM 'abs(((Z0_at_210_0n >= 0.45) + (Z1_at_210_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_211_0n FIND V(Z0<0>) AT=211.9n
+.MEAS Z1_at_211_0n FIND V(Z0<1>) AT=211.9n
+.MEAS BLANK211_0 PARAM 0
+.MEAS TEST211 PARAM 'abs(((Z0_at_211_0n >= 0.45) + (Z1_at_211_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_212_0n FIND V(Z0<0>) AT=212.9n
+.MEAS Z1_at_212_0n FIND V(Z0<1>) AT=212.9n
+.MEAS BLANK212_0 PARAM 0
+.MEAS TEST212 PARAM 'abs(((Z0_at_212_0n >= 0.45) + (Z1_at_212_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_213_0n FIND V(Z0<0>) AT=213.9n
+.MEAS Z1_at_213_0n FIND V(Z0<1>) AT=213.9n
+.MEAS BLANK213_0 PARAM 0
+.MEAS TEST213 PARAM 'abs(((Z0_at_213_0n >= 0.45) + (Z1_at_213_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_214_0n FIND V(Z0<0>) AT=214.9n
+.MEAS Z1_at_214_0n FIND V(Z0<1>) AT=214.9n
+.MEAS BLANK214_0 PARAM 0
+.MEAS TEST214 PARAM 'abs(((Z0_at_214_0n >= 0.45) + (Z1_at_214_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_215_0n FIND V(Z0<0>) AT=215.9n
+.MEAS Z1_at_215_0n FIND V(Z0<1>) AT=215.9n
+.MEAS BLANK215_0 PARAM 0
+.MEAS TEST215 PARAM 'abs(((Z0_at_215_0n >= 0.45) + (Z1_at_215_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_216_0n FIND V(Z0<0>) AT=216.9n
+.MEAS Z1_at_216_0n FIND V(Z0<1>) AT=216.9n
+.MEAS BLANK216_0 PARAM 0
+.MEAS TEST216 PARAM 'abs(((Z0_at_216_0n >= 0.45) + (Z1_at_216_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_217_0n FIND V(Z0<0>) AT=217.9n
+.MEAS Z1_at_217_0n FIND V(Z0<1>) AT=217.9n
+.MEAS BLANK217_0 PARAM 0
+.MEAS TEST217 PARAM 'abs(((Z0_at_217_0n >= 0.45) + (Z1_at_217_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_218_0n FIND V(Z0<0>) AT=218.9n
+.MEAS Z1_at_218_0n FIND V(Z0<1>) AT=218.9n
+.MEAS BLANK218_0 PARAM 0
+.MEAS TEST218 PARAM 'abs(((Z0_at_218_0n >= 0.45) + (Z1_at_218_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_219_0n FIND V(Z0<0>) AT=219.9n
+.MEAS Z1_at_219_0n FIND V(Z0<1>) AT=219.9n
+.MEAS BLANK219_0 PARAM 0
+.MEAS TEST219 PARAM 'abs(((Z0_at_219_0n >= 0.45) + (Z1_at_219_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_220_0n FIND V(Z0<0>) AT=220.9n
+.MEAS Z1_at_220_0n FIND V(Z0<1>) AT=220.9n
+.MEAS BLANK220_0 PARAM 0
+.MEAS TEST220 PARAM 'abs(((Z0_at_220_0n >= 0.45) + (Z1_at_220_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_221_0n FIND V(Z0<0>) AT=221.9n
+.MEAS Z1_at_221_0n FIND V(Z0<1>) AT=221.9n
+.MEAS BLANK221_0 PARAM 0
+.MEAS TEST221 PARAM 'abs(((Z0_at_221_0n >= 0.45) + (Z1_at_221_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_222_0n FIND V(Z0<0>) AT=222.9n
+.MEAS Z1_at_222_0n FIND V(Z0<1>) AT=222.9n
+.MEAS BLANK222_0 PARAM 0
+.MEAS TEST222 PARAM 'abs(((Z0_at_222_0n >= 0.45) + (Z1_at_222_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_223_0n FIND V(Z0<0>) AT=223.9n
+.MEAS Z1_at_223_0n FIND V(Z0<1>) AT=223.9n
+.MEAS BLANK223_0 PARAM 0
+.MEAS TEST223 PARAM 'abs(((Z0_at_223_0n >= 0.45) + (Z1_at_223_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_224_0n FIND V(Z0<0>) AT=224.9n
+.MEAS Z1_at_224_0n FIND V(Z0<1>) AT=224.9n
+.MEAS BLANK224_0 PARAM 0
+.MEAS TEST224 PARAM 'abs(((Z0_at_224_0n >= 0.45) + (Z1_at_224_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_225_0n FIND V(Z0<0>) AT=225.9n
+.MEAS Z1_at_225_0n FIND V(Z0<1>) AT=225.9n
+.MEAS BLANK225_0 PARAM 0
+.MEAS TEST225 PARAM 'abs(((Z0_at_225_0n >= 0.45) + (Z1_at_225_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_226_0n FIND V(Z0<0>) AT=226.9n
+.MEAS Z1_at_226_0n FIND V(Z0<1>) AT=226.9n
+.MEAS BLANK226_0 PARAM 0
+.MEAS TEST226 PARAM 'abs(((Z0_at_226_0n >= 0.45) + (Z1_at_226_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_227_0n FIND V(Z0<0>) AT=227.9n
+.MEAS Z1_at_227_0n FIND V(Z0<1>) AT=227.9n
+.MEAS BLANK227_0 PARAM 0
+.MEAS TEST227 PARAM 'abs(((Z0_at_227_0n >= 0.45) + (Z1_at_227_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_228_0n FIND V(Z0<0>) AT=228.9n
+.MEAS Z1_at_228_0n FIND V(Z0<1>) AT=228.9n
+.MEAS BLANK228_0 PARAM 0
+.MEAS TEST228 PARAM 'abs(((Z0_at_228_0n >= 0.45) + (Z1_at_228_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_229_0n FIND V(Z0<0>) AT=229.9n
+.MEAS Z1_at_229_0n FIND V(Z0<1>) AT=229.9n
+.MEAS BLANK229_0 PARAM 0
+.MEAS TEST229 PARAM 'abs(((Z0_at_229_0n >= 0.45) + (Z1_at_229_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_230_0n FIND V(Z0<0>) AT=230.9n
+.MEAS Z1_at_230_0n FIND V(Z0<1>) AT=230.9n
+.MEAS BLANK230_0 PARAM 0
+.MEAS TEST230 PARAM 'abs(((Z0_at_230_0n >= 0.45) + (Z1_at_230_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_231_0n FIND V(Z0<0>) AT=231.9n
+.MEAS Z1_at_231_0n FIND V(Z0<1>) AT=231.9n
+.MEAS BLANK231_0 PARAM 0
+.MEAS TEST231 PARAM 'abs(((Z0_at_231_0n >= 0.45) + (Z1_at_231_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_232_0n FIND V(Z0<0>) AT=232.9n
+.MEAS Z1_at_232_0n FIND V(Z0<1>) AT=232.9n
+.MEAS BLANK232_0 PARAM 0
+.MEAS TEST232 PARAM 'abs(((Z0_at_232_0n >= 0.45) + (Z1_at_232_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_233_0n FIND V(Z0<0>) AT=233.9n
+.MEAS Z1_at_233_0n FIND V(Z0<1>) AT=233.9n
+.MEAS BLANK233_0 PARAM 0
+.MEAS TEST233 PARAM 'abs(((Z0_at_233_0n >= 0.45) + (Z1_at_233_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_234_0n FIND V(Z0<0>) AT=234.9n
+.MEAS Z1_at_234_0n FIND V(Z0<1>) AT=234.9n
+.MEAS BLANK234_0 PARAM 0
+.MEAS TEST234 PARAM 'abs(((Z0_at_234_0n >= 0.45) + (Z1_at_234_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_235_0n FIND V(Z0<0>) AT=235.9n
+.MEAS Z1_at_235_0n FIND V(Z0<1>) AT=235.9n
+.MEAS BLANK235_0 PARAM 0
+.MEAS TEST235 PARAM 'abs(((Z0_at_235_0n >= 0.45) + (Z1_at_235_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_236_0n FIND V(Z0<0>) AT=236.9n
+.MEAS Z1_at_236_0n FIND V(Z0<1>) AT=236.9n
+.MEAS BLANK236_0 PARAM 0
+.MEAS TEST236 PARAM 'abs(((Z0_at_236_0n >= 0.45) + (Z1_at_236_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_237_0n FIND V(Z0<0>) AT=237.9n
+.MEAS Z1_at_237_0n FIND V(Z0<1>) AT=237.9n
+.MEAS BLANK237_0 PARAM 0
+.MEAS TEST237 PARAM 'abs(((Z0_at_237_0n >= 0.45) + (Z1_at_237_0n >= 0.45) * 2) - (0)) < 0.01'
+
+.MEAS Z0_at_238_0n FIND V(Z0<0>) AT=238.9n
+.MEAS Z1_at_238_0n FIND V(Z0<1>) AT=238.9n
+.MEAS BLANK238_0 PARAM 0
+.MEAS TEST238 PARAM 'abs(((Z0_at_238_0n >= 0.45) + (Z1_at_238_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_239_0n FIND V(Z0<0>) AT=239.9n
+.MEAS Z1_at_239_0n FIND V(Z0<1>) AT=239.9n
+.MEAS BLANK239_0 PARAM 0
+.MEAS TEST239 PARAM 'abs(((Z0_at_239_0n >= 0.45) + (Z1_at_239_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_240_0n FIND V(Z0<0>) AT=240.9n
+.MEAS Z1_at_240_0n FIND V(Z0<1>) AT=240.9n
+.MEAS BLANK240_0 PARAM 0
+.MEAS TEST240 PARAM 'abs(((Z0_at_240_0n >= 0.45) + (Z1_at_240_0n >= 0.45) * 2) - (1)) < 0.01'
+
+.MEAS Z0_at_241_0n FIND V(Z0<0>) AT=241.9n
+.MEAS Z1_at_241_0n FIND V(Z0<1>) AT=241.9n
+.MEAS BLANK241_0 PARAM 0
+.MEAS TEST241 PARAM 'abs(((Z0_at_241_0n >= 0.45) + (Z1_at_241_0n >= 0.45) * 2) - (2)) < 0.01'
+
+.MEAS Z0_at_242_0n FIND V(Z0<0>) AT=242.9n
+.MEAS Z1_at_242_0n FIND V(Z0<1>) AT=242.9n
+.MEAS BLANK242_0 PARAM 0
+.MEAS TEST242 PARAM 'abs(((Z0_at_242_0n >= 0.45) + (Z1_at_242_0n >= 0.45) * 2) - (3)) < 0.01'
+
+
+
+.END

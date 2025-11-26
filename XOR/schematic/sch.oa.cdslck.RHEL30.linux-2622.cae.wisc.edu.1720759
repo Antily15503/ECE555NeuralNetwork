@@ -12,5 +12,5 @@ ProcessCreationTime_Readable   Tue Nov 25 22:45:49 2025 CST
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
-FilePathUsedToEditLock         /filespace/y/yli2494/ece555/TeamKEK/XNOR_NOR/schematic/sch.oa.cdslck
-TimeEditLocked                 Tue Nov 25 22:58:03 2025 CST
+FilePathUsedToEditLock         /filespace/y/yli2494/ece555/TeamKEK/XOR/schematic/sch.oa.cdslck
+TimeEditLocked                 Wed Nov 26 01:42:04 2025 CST
