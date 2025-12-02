@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      yli2494
+HostName                       linux-2627.cae.wisc.edu
+ProcessIdentifier              128710
+ProcessCreationTime_UTC        1764181080
+ProcessCreationTime_Readable   Wed Nov 26 12:18:00 2025 CST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /filespace/y/yli2494/ece555/TeamKEK/MULT2bit/schematic/sch.oa.cdslck
+TimeEditLocked                 Wed Nov 26 17:54:38 2025 CST
