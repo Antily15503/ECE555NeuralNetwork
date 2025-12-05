@@ -1,0 +1,77 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/MULT2bit.dv
+dv_start unmatched                                
+dv_cell {MULT2bit} {MULT2bit} unmatched
+dv_obj_count -transformed_nets {13 10} -transformed_inst {7 7} -transformed_port {2 8}
+dv_discrep 1 {Incorrect Nets} -inst_count { 6 9}
+dv_discrep_line {Net } -lnet {VSS} {                                                   } -snet {VSS} {}
+dv_discrep_line {--- 6 Connections On This Net ---                         --- 9 Connections On This Net ---}
+dv_discrep_line {--------------------------                                --------------------------}
+dv_discrep_line {}
+dv_discrep_line {** missing connection **                                  (_nor2v):}  {sup2} {}
+dv_discrep_line {                                                            } -sdev {XI6/XI2/MM3} {:}  {b} {}
+dv_discrep_line {                                                            } -sdev {XI6/XI2/MM3} {:}  {d} {}
+dv_discrep_line {                                                            } -sdev {XI6/XI2/MM2} {:}  {b} {}
+dv_discrep_line {                                                            } -sdev {XI6/XI2/MM2} {:}  {d} {}
+dv_discrep_line {}
+dv_discrep_line {}
+dv_discrep_line {** missing connection **                                  } -sdev {XI6/MM4} {:}  {s} {}
+dv_discrep_line {** missing connection **                                  } -sdev {XI6/MM4} {:}  {g} {}
+dv_discrep_line {}
+dv_discrep_line {}
+dv_discrep 2 {Incorrect Nets} -inst_count { 3 3}
+dv_discrep_line {Net } -lnet {8} {                                                     } -snet {net3} {}
+dv_discrep_line {    } -lnet {10} {                                                   }
+dv_discrep_line {--- 3 Connections On This Net ---                         --- 3 Connections On This Net ---}
+dv_discrep_line {}
+dv_discrep 3 {Incorrect Nets} -inst_count { 2 0}
+dv_discrep_line {Net } -lnet {9} {                                                     ** missing net **}
+dv_discrep_line {}
+dv_discrep 4 {Incorrect Nets} -inst_count { 1 0}
+dv_discrep_line {Net } -lnet {23} {                                                    ** missing net **}
+dv_discrep_line {}
+dv_discrep 5 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {B<1>} { on net: } -snet {B<1>} {}
+dv_discrep_line {}
+dv_discrep 6 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {B<0>} { on net: } -snet {B<0>} {}
+dv_discrep_line {}
+dv_discrep 7 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {A<1>} { on net: } -snet {A<1>} {}
+dv_discrep_line {}
+dv_discrep 8 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {A<0>} { on net: } -snet {A<0>} {}
+dv_discrep_line {}
+dv_discrep 9 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {Y<1>} { on net: } -snet {Y<1>} {}
+dv_discrep_line {}
+dv_discrep 10 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {Y<0>} { on net: } -snet {Y<0>} {}
+dv_discrep_line {}
+dv_discrep -1 {Detailed Instance Connections}
+dv_discrep_line {}
+dv_discrep_line {} -ldev {M4} {} -lloc {(0.1790,0.0270)} {  MN(NMOS_RVT)                           } -sdev {XI6/MM4} {  MN(NMOS_RVT)}
+dv_discrep_line {  } -lport {s} {: } -lnet {3} {                                                      } -sport {d} {: } -snet {B<1>} {}
+dv_discrep_line {  } -lport {b} {: } -lnet {VSS} {                                                    } -sport {b} {: } -snet {VSS} {}
+dv_discrep_line {  } -lport {g} {: } -lnet {23} {                                                     ** missing net **}
+dv_discrep_line {  } -lport {d} {: } -lnet {9} {                                                      ** missing net **}
+dv_discrep_line {  ** } -lnet {VSS} { **                                                 } -sport {g} {: } -snet {VSS} {}
+dv_discrep_line {  ** } -lnet {VSS} { **                                                 } -sport {s} {: } -snet {VSS} {}
+dv_discrep_line {}
+dv_discrep_line {--------------------------------------------------------------------------------------------------------------}
+dv_discrep_line {}
+dv_discrep_line {(_nor2b)                                                  (_nor2v)}
+dv_discrep_line {  } -lport {in1} {: } -lnet {7} {                                                    } -sport {in1} {: } -snet {XI6/net5} {}
+dv_discrep_line {  } -lport {in2} {: } -lnet {10} {                                                   } -sport {in2} {: } -snet {net3} {}
+dv_discrep_line {  } -lport {out} {: } -lnet {13} {                                                   } -sport {out} {: } -snet {Y<1>} {}
+dv_discrep_line {  } -lport {sup1} {: } -lnet {VDD} {                                                 } -sport {sup1} {: } -snet {VDD} {}
+dv_discrep_line {  } -lport {sup2} {: } -lnet {9} {                                                   ** missing net **}
+dv_discrep_line {  ** } -lnet {VSS} { **                                                 } -sport {sup2} {: } -snet {VSS} {}
+dv_discrep_line {}
+dv_discrep_line {Devices: }
+dv_discrep_line {  } -ldev {M12} {} -lloc {(0.2330,0.1620)} {  MP(PMOS_RVT)                          } -sdev {XI6/XI2/MM0} {  MP(PMOS_RVT) }
+dv_discrep_line {  } -ldev {M13} {} -lloc {(0.2870,0.1620)} {  MP(PMOS_RVT)                          } -sdev {XI6/XI2/MM1} {  MP(PMOS_RVT) }
+dv_discrep_line {  } -ldev {M5} {} -lloc {(0.2330,0.0270)} {  MN(NMOS_RVT)                           } -sdev {XI6/XI2/MM2} {  MN(NMOS_RVT) }
+dv_discrep_line {  } -ldev {M6} {} -lloc {(0.2870,0.0270)} {  MN(NMOS_RVT)                           } -sdev {XI6/XI2/MM3} {  MN(NMOS_RVT) }
+dv_discrep_line {}
+dv_end

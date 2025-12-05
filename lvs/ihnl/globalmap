@@ -1,6 +1,10 @@
 CADENCE IHNL11140
 $model
-TeamKEK/XOR/schematic XOR
+TeamKEK/MULT2bit/schematic MULT2bit
+TeamKEK/INV/schematic INV
+TeamKEK/XNOR_NOR/schematic XNOR_NOR
+TeamKEK/NAND/schematic NAND
+TeamKEK/NOR/schematic NOR
 $endmodel
 $net
 $endnet

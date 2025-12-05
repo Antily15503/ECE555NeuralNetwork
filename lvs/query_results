@@ -1,0 +1,9 @@
+mgc_rve_context_lcv "TeamKEK" "MULT2bit" "layout" 4000
+mgc_rve_highlight_index 0 "6" "#FFFF0000FFFF"
+mgc_rve_layer "LIG"
+mr 0.124 0.394 0.146 0.416
+mgc_rve_layer "M1"
+mr 0.126 0.368 0.144 0.45
+mgc_rve_layer "<ENCRYPTED_LAYER_23>"
+mr 0.125 0.292 0.145 0.518
+mgc_rve_zoom 0.1195 0.24375 0.1505 0.56625 1
