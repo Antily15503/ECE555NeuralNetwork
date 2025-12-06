@@ -1507,6 +1507,4 @@ vRef1 ref1 0 PWL
 .MEAS BLANK242_0 PARAM 0
 .MEAS TEST242 PARAM 'abs(((Z0_at_242_0n >= 0.45) + (Z1_at_242_0n >= 0.45) * 2) - (3)) < 0.01'
 
-
-
 .END
