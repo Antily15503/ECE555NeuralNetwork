@@ -1,0 +1,28 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  TeamKEK
+* Top Cell Name: INV
+* View Name:     schematic
+* Netlisted on:  Dec  6 18:14:13 2025
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: TeamKEK
+* Cell Name:    INV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT INV IN OUT VDD VSS
+*.PININFO IN:I OUT:O VDD:B VSS:B
+MM0 OUT IN VSS VSS nmos_rvt w=81.0n l=20n nfin=3
+MM1 OUT IN VDD VDD pmos_rvt w=81.0n l=20n nfin=3
+.ENDS
+

@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1765068963 1765068967
+lvs_ExtOutFile RUNDIR /filespace/o/oh87/ece555/NeuralNetwork/lvs
+lvs_ExtOutFile RULES_FILE _lvsRules_calibre_asap7.rul_
+lvs_ExtInfoExtSummary {0 0 0 0 2 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST svdb/INV_NOR.sp
+lvs_ExtOutFile EXTRACTION_REPORT INV_NOR.lvs.report.ext

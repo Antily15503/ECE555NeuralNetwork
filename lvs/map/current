@@ -1,22 +1,18 @@
 ( ( nil
   version "2.1"
   mapType "incremental"
-  blockName "MULT2bit"
+  blockName "INV_NOR"
   repList "auCdl schematic"
   stopList "auCdl"
   hierDelim "."
   netlistDir "/filespace/o/oh87/ece555/NeuralNetwork/lvs"
  )
 ( model
-( "TeamKEK/MULT2bit/schematic" "MULT2bit" )
-( "TeamKEK/NAND/schematic" "NAND" )
-( "TeamKEK/XNOR_NOR/schematic" "XNOR_NOR" )
+( "TeamKEK/INV_NOR/schematic" "INV_NOR" )
 ( "TeamKEK/INV/schematic" "INV" )
 ( "TeamKEK/NOR/schematic" "NOR" )
  )
-( "NAND" "ihnl/cds0/map" )
-( "NOR" "ihnl/cds2/map" )
-( "XNOR_NOR" "ihnl/cds3/map" )
-( "INV" "ihnl/cds1/map" )
-( "MULT2bit" "ihnl/cds4/map" )
+( "INV_NOR" "ihnl/cds2/map" )
+( "NOR" "ihnl/cds1/map" )
+( "INV" "ihnl/cds0/map" )
  )

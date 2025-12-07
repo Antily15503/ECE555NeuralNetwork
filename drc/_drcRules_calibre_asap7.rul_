@@ -1,19 +1,19 @@
 //
-//  Rule file generated on Fri Dec 5 01:16:59 2025
+//  Rule file generated on Sat Dec 6 18:51:06 2025
 //  by Calibre Interactive v2024.4_39.16    Tue Dec 3 16:43:50 PST 2024
 //
 //      *** PLEASE DO NOT MODIFY THIS FILE ***
 //
 //
 
-LAYOUT PATH "MULT2bit.calibre.db"
+LAYOUT PATH "INV_NOR.calibre.db"
 LAYOUT SYSTEM GDSII
-LAYOUT PRIMARY "MULT2bit"
+LAYOUT PRIMARY "INV_NOR"
 
-DRC RESULTS DATABASE "MULT2bit.drc.results" ASCII
+DRC RESULTS DATABASE "INV_NOR.drc.results" ASCII
 DRC CELL NAME YES CELL SPACE XFORM
 
-DRC SUMMARY REPORT "MULT2bit.drc.summary" REPLACE HIER
+DRC SUMMARY REPORT "INV_NOR.drc.summary" REPLACE HIER
 
 DRC MAXIMUM RESULTS 1000
 

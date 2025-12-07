@@ -2,7 +2,7 @@
 Product   : Virtuoso(R) XStream Out
 Program   : @(#)$CDS: strmout version IC23.1-64b 04/22/2025 22:31 (cpgbld17) $
           : sub-version  IC23.1-64b.ISR14.32 
-Started at: 15-Nov-2025  18:29:13
+Started at: 06-Dec-2025  18:12:40
 User Name : oh87
 Host Name : linux-2630
 Directory : /filespace/o/oh87/ece555/NeuralNetwork
@@ -15,7 +15,7 @@ Info: Cellview Rev Num:99,  Tech Rev Num:59
 ---------------------------------------------------------------------------------------------------------------------------------------
 Library/Cell/View               Instance Array   Polygon  Rect   Path   PathSeg   Text   TextDisplay   Line   Dot   Arc   Donut   Ellipse 
 ---------------------------------------------------------------------------------------------------------------------------------------
-TeamKEK/NOR/layout              0        0       0        63     0      0         7      0             0      0     0     0       0       
+TeamKEK/NOR/layout              0        0       0        53     0      0         7      0             0      0     0     0       0       
 ---------------------------------------------------------------------------------------------------------------------------------------
 
                        Individual Cell Statistics - Advanced Objects
@@ -30,7 +30,7 @@ TeamKEK/NOR/layout              0        0          0          0          0     
 Cadence         Cadence         Stream  Stream   
 Layer           Purpose         Layer   Datatype  Polygon  Rect     Path     Text     TextDisplay   Line Dot Arc Donut Ellipse Pathseg
 ---------------------------------------------------------------------------------------------------------------------------------------
-Gate            drawing         7       0         0        6        0        0        0             0    0   0   0     0      0      
+Gate            drawing         7       0         0        4        0        0        0             0    0   0   0     0      0      
 GCut            drawing         10      0         0        4        0        0        0             0    0   0   0     0      0      
 well            drawing         1       0         0        1        0        0        0             0    0   0   0     0      0      
 well            pin             1       251       0        0        0        1        0             0    0   0   0     0      0      
@@ -39,11 +39,11 @@ Pselect         drawing         13      0         0        1        0        0  
 P_SUB           pin             3       251       0        0        0        1        0             0    0   0   0     0      0      
 fin             drawing         2       0         0        10       0        0        0             0    0   0   0     0      0      
 Active          drawing         11      0         0        2        0        0        0             0    0   0   0     0      0      
-SDT             drawing         88      0         0        6        0        0        0             0    0   0   0     0      0      
-LISD            drawing         17      0         0        6        0        0        0             0    0   0   0     0      0      
-LIG             drawing         16      0         0        6        0        0        0             0    0   0   0     0      0      
-V0              drawing         18      0         0        10       0        0        0             0    0   0   0     0      0      
-M1              drawing         19      0         0        9        0        0        0             0    0   0   0     0      0      
+SDT             drawing         88      0         0        5        0        0        0             0    0   0   0     0      0      
+LISD            drawing         17      0         0        5        0        0        0             0    0   0   0     0      0      
+LIG             drawing         16      0         0        4        0        0        0             0    0   0   0     0      0      
+V0              drawing         18      0         0        8        0        0        0             0    0   0   0     0      0      
+M1              drawing         19      0         0        7        0        0        0             0    0   0   0     0      0      
 M1              pin             19      251       0        0        0        5        0             0    0   0   0     0      0      
 BOUNDARY        drawing         100     0         0        1        0        0        0             0    0   0   0     0      0      
 ---------------------------------------------------------------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ Summary of Objects Translated:
 	Array Instances:		0
 	Polygons:			0
 	Paths:				0
-	Rectangles:			63
+	Rectangles:			53
 	Lines:				0
 	Arcs:				0
 	Donuts:				0

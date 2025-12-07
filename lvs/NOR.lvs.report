@@ -16,7 +16,7 @@ LAYOUT NAME:              svdb/NOR.sp ('NOR')
 SOURCE NAME:              NOR.src.net ('NOR')
 RULE FILE:                _lvsRules_calibre_asap7.rul_
 RULE FILE TITLE:          LVS Rule File for ASAP7 PDK
-CREATION TIME:            Sat Nov 15 18:29:17 2025
+CREATION TIME:            Sat Dec  6 18:12:43 2025
 CURRENT DIRECTORY:        /filespace/o/oh87/ece555/NeuralNetwork/lvs
 USER NAME:                oh87
 CALIBRE VERSION:          v2024.4_39.16    Tue Dec 3 16:43:47 PST 2024
@@ -190,12 +190,12 @@ INITIAL NUMBERS OF OBJECTS
                 ------    ------         --------------
  Ports:              5         5
 
- Nets:               7         7
+ Nets:               6         6
 
  Instances:          2         2         MN (4 pins)
-                     4         4         MP (4 pins)
+                     2         2         MP (4 pins)
                 ------    ------
- Total Inst:         6         6
+ Total Inst:         4         4
 
 
 NUMBERS OF OBJECTS AFTER TRANSFORMATION
@@ -228,14 +228,6 @@ NUMBERS OF OBJECTS AFTER TRANSFORMATION
    Instances:           1          1            0            0    _nor2v
                   -------    -------    ---------    ---------
    Total Inst:          1          1            0            0
-
-
-o Statistics:
-
-   4 layout mos transistors were reduced to 2.  1 connecting net was deleted.
-     2 mos transistors and 1 connecting net were deleted by split-gate reduction.
-   4 source mos transistors were reduced to 2.  1 connecting net was deleted.
-     2 mos transistors and 1 connecting net were deleted by split-gate reduction.
 
 
 o Initial Correspondence Points:

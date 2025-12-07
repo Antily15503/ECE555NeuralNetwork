@@ -4,7 +4,7 @@
 * Library Name:  TeamKEK
 * Top Cell Name: NOR
 * View Name:     schematic
-* Netlisted on:  Nov 15 18:29:14 2025
+* Netlisted on:  Dec  6 18:12:41 2025
 ************************************************************************
 
 *.EQUATION
@@ -20,13 +20,11 @@
 * View Name:    schematic
 ************************************************************************
 
-.SUBCKT NOR A B Y vdd vss
-*.PININFO A:I B:I Y:O vdd:B vss:B
-MM5 net4 B vdd vdd pmos_rvt w=81.0n l=20n nfin=3
-MM4 Y A net4 vdd pmos_rvt w=81.0n l=20n nfin=3
-MM1 Y A net1 vdd pmos_rvt w=81.0n l=20n nfin=3
-MM0 net1 B vdd vdd pmos_rvt w=81.0n l=20n nfin=3
-MM3 Y B vss vss nmos_rvt w=54.0n l=20n nfin=2
-MM2 Y A vss vss nmos_rvt w=54.0n l=20n nfin=2
+.SUBCKT NOR A B VDD VSS Y
+*.PININFO A:I B:I Y:O VDD:B VSS:B
+MM1 Y A net1 VDD pmos_rvt w=81.0n l=20n nfin=3
+MM0 net1 B VDD VDD pmos_rvt w=81.0n l=20n nfin=3
+MM3 Y A VSS VSS nmos_rvt w=54.0n l=20n nfin=2
+MM2 Y B VSS VSS nmos_rvt w=54.0n l=20n nfin=2
 .ENDS
 

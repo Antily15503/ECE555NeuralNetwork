@@ -1,0 +1,54 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  TeamKEK
+* Top Cell Name: INV_NOR
+* View Name:     schematic
+* Netlisted on:  Dec  6 18:56:01 2025
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: TeamKEK
+* Cell Name:    INV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT INV IN OUT VDD VSS
+*.PININFO IN:I OUT:O VDD:B VSS:B
+MM0 OUT IN VSS VSS nmos_rvt w=81.0n l=20n nfin=3
+MM1 OUT IN VDD VDD pmos_rvt w=81.0n l=20n nfin=3
+.ENDS
+
+************************************************************************
+* Library Name: TeamKEK
+* Cell Name:    NOR
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NOR A B VDD VSS Y
+*.PININFO A:I B:I Y:O VDD:B VSS:B
+MM1 Y A net1 VDD pmos_rvt w=81.0n l=20n nfin=3
+MM0 net1 B VDD VDD pmos_rvt w=81.0n l=20n nfin=3
+MM3 Y A VSS VSS nmos_rvt w=54.0n l=20n nfin=2
+MM2 Y B VSS VSS nmos_rvt w=54.0n l=20n nfin=2
+.ENDS
+
+************************************************************************
+* Library Name: TeamKEK
+* Cell Name:    INV_NOR
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT INV_NOR A B VDD VSS Y
+*.PININFO A:I B:I Y:O VDD:B VSS:B
+XI0 B net4 VDD VSS / INV
+XI1 A net4 VDD VSS Y / NOR
+.ENDS
+

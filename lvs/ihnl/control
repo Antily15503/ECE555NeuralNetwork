@@ -1,6 +1,6 @@
 hnlLastStopCellInfo = '(
-                           ( "asap7_TechLib" "pmos_rvt" "auCdl" "43" "1662602713" )
-                          ( "asap7_TechLib" "nmos_rvt" "auCdl" "43" "1662602713" )
+                           ( "asap7_TechLib" "nmos_rvt" "auCdl" "43" "1662602713" )
+                          ( "asap7_TechLib" "pmos_rvt" "auCdl" "43" "1662602713" )
                        )
 hnlLastTopViewWasConfig = 0
 hnlLastMaxNameLength = 2048

@@ -1,7 +1,5 @@
-CADENCE IHNL11145
+CADENCE IHNL11143
 
-TeamKEK NAND schematic cds0
-TeamKEK INV schematic cds1
-TeamKEK NOR schematic cds2
-TeamKEK XNOR_NOR schematic cds3
-TeamKEK MULT2bit schematic cds4
+TeamKEK INV schematic cds0
+TeamKEK NOR schematic cds1
+TeamKEK INV_NOR schematic cds2
