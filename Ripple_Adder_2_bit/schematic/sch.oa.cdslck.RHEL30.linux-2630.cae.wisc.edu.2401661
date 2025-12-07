@@ -12,5 +12,5 @@ ProcessCreationTime_Readable   Sat Dec  6 21:11:44 2025 CST
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
-FilePathUsedToEditLock         /filespace/y/yli2494/ece555/TeamKEK/AND/layout/layout.oa.cdslck
-TimeEditLocked                 Sat Dec  6 23:48:15 2025 CST
+FilePathUsedToEditLock         /filespace/y/yli2494/ece555/TeamKEK/Ripple_Adder_2_bit/schematic/sch.oa.cdslck
+TimeEditLocked                 Sun Dec  7 00:34:12 2025 CST
