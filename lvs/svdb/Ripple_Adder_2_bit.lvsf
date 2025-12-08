@@ -1,0 +1,19 @@
+# Automagically generated file: Please do not edit!
+lvs_LvsOutFile RUNDIR /filespace/o/oh87/ece555/NeuralNetwork/lvs
+lvs_LvsfVersion 4
+lvs_LvsInputSummary {0 0 0}
+lvs_LvsComparisonSummary {3 0 0 0}
+lvs_SourceCase NO
+lvs_LayoutCase NO
+lvs_PowerName vdd!
+lvs_PowerName VDD!
+lvs_PowerName vdd
+lvs_PowerName VDD
+lvs_GroundName VSS
+lvs_GroundName VSS!
+lvs_GroundName GND
+lvs_GroundName GND!
+lvs_LvsOutFile LVS_REPORT Ripple_Adder_2_bit.lvs.report
+lvs_LvsOutFile SOURCE_NETLIST Ripple_Adder_2_bit.src.net
+lvs_LvsOutFile RULES_FILE _lvsRules_calibre_asap7.rul_
+lvs_LvsRunTimes 1765169127 1765169127

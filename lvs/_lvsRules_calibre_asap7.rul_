@@ -1,22 +1,22 @@
 //
-//  Rule file generated on Sat Dec 6 18:56:01 2025
+//  Rule file generated on Sun Dec 7 22:45:25 2025
 //  by Calibre Interactive v2024.4_39.16    Tue Dec 3 16:43:50 PST 2024
 //
 //      *** PLEASE DO NOT MODIFY THIS FILE ***
 //
 //
 
-LAYOUT PATH "INV_NOR.calibre.db"
+LAYOUT PATH "Ripple_Adder_2_bit.calibre.db"
 LAYOUT SYSTEM GDSII
-LAYOUT PRIMARY "INV_NOR"
+LAYOUT PRIMARY "Ripple_Adder_2_bit"
 
-SOURCE PATH "INV_NOR.src.net"
+SOURCE PATH "Ripple_Adder_2_bit.src.net"
 SOURCE SYSTEM SPICE
-SOURCE PRIMARY "INV_NOR"
+SOURCE PRIMARY "Ripple_Adder_2_bit"
 
 MASK SVDB DIRECTORY "svdb" QUERY
 
-LVS REPORT "INV_NOR.lvs.report"
+LVS REPORT "Ripple_Adder_2_bit.lvs.report"
 
 LVS POWER NAME "vdd!" "VDD!" "vdd" "VDD"
 LVS GROUND NAME "VSS" "VSS!" "GND" "GND!"
@@ -27,10 +27,10 @@ VIRTUAL CONNECT NAME "VDD" "VSS"
 
 LVS EXECUTE ERC YES
 
-ERC RESULTS DATABASE "INV_NOR.erc.results"
+ERC RESULTS DATABASE "Ripple_Adder_2_bit.erc.results"
 ERC CELL NAME YES CELL SPACE XFORM
 
-ERC SUMMARY REPORT "INV_NOR.erc.summary" HIER
+ERC SUMMARY REPORT "Ripple_Adder_2_bit.erc.summary" HIER
 
 DRC ICSTATION YES
 

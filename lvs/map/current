@@ -1,18 +1,24 @@
 ( ( nil
   version "2.1"
   mapType "incremental"
-  blockName "INV_NOR"
+  blockName "Ripple_Adder_2_bit"
   repList "auCdl schematic"
   stopList "auCdl"
   hierDelim "."
   netlistDir "/filespace/o/oh87/ece555/NeuralNetwork/lvs"
  )
 ( model
-( "TeamKEK/INV_NOR/schematic" "INV_NOR" )
+( "TeamKEK/Ripple_Adder_2_bit/schematic" "Ripple_Adder_2_bit" )
+( "TeamKEK/XOR/schematic" "XOR" )
+( "TeamKEK/AND/schematic" "AND" )
+( "TeamKEK/Half_Adder/schematic" "Half_Adder" )
 ( "TeamKEK/INV/schematic" "INV" )
 ( "TeamKEK/NOR/schematic" "NOR" )
  )
-( "INV_NOR" "ihnl/cds2/map" )
-( "NOR" "ihnl/cds1/map" )
-( "INV" "ihnl/cds0/map" )
+( "NOR" "ihnl/cds4/map" )
+( "Half_Adder" "ihnl/cds2/map" )
+( "XOR" "ihnl/cds0/map" )
+( "Ripple_Adder_2_bit" "ihnl/cds5/map" )
+( "AND" "ihnl/cds1/map" )
+( "INV" "ihnl/cds3/map" )
  )
