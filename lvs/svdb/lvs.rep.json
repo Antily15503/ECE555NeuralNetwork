@@ -1,14 +1,14 @@
 {
     "PLEASE DON'T EDIT OR PARSE": "This is automatically generated file for extracting in QS",
-    "CREATION TIME": "Sat Dec  6 18:56:07 2025",
+    "CREATION TIME": "Sun Dec  7 22:45:27 2025",
     "VERSION": "1",
     "LVS REPORT OPTION": [
         "N"
     ],
     "LVS CORRECT CELLS": [
         [
-            "INV_NOR",
-            "INV_NOR"
+            "Ripple_Adder_2_bit",
+            "Ripple_Adder_2_bit"
         ]
     ]
 }

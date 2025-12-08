@@ -1,5 +1,8 @@
-CADENCE IHNL11143
+CADENCE IHNL11146
 
-TeamKEK INV schematic cds0
-TeamKEK NOR schematic cds1
-TeamKEK INV_NOR schematic cds2
+TeamKEK XOR schematic cds0
+TeamKEK AND schematic cds1
+TeamKEK Half_Adder schematic cds2
+TeamKEK INV schematic cds3
+TeamKEK NOR schematic cds4
+TeamKEK Ripple_Adder_2_bit schematic cds5

@@ -1,8 +1,11 @@
 CADENCE IHNL11140
 $model
+TeamKEK/Half_Adder/schematic Half_Adder
 TeamKEK/INV/schematic INV
-TeamKEK/INV_NOR/schematic INV_NOR
+TeamKEK/Ripple_Adder_2_bit/schematic Ripple_Adder_2_bit
 TeamKEK/NOR/schematic NOR
+TeamKEK/AND/schematic AND
+TeamKEK/XOR/schematic XOR
 $endmodel
 $net
 $endnet
