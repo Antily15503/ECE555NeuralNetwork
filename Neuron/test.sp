@@ -15,17 +15,20 @@ mn0 y a vss vss nmos_rvt w=54e-9 l=20e-9 nfin=1
 mp1 y a vdd vdd pmos_rvt w=81e-9 l=20e-9 nfin=1
 .ends INV_V2
 
-xi24 z<0> vdd vss inv_out INV_V2
-xi23 z<0> vdd vss inv_out INV_V2
-xi22 z<0> vdd vss inv_out2 INV_V2
-xi21 z<0> vdd vss inv_out INV_V2
-xi28 z<1> vdd vss inv_out INV_V2
-xi27 z<1> vdd vss inv_out INV_V2
-xi26 z<1> vdd vss inv_out2 INV_V2
-xi25 z<1> vdd vss inv_out INV_V2
+xi24 z0<0> vdd vss inv_out INV_V2
+xi23 z0<0> vdd vss inv_out INV_V2
+xi22 z0<0> vdd vss inv_out2 INV_V2
+xi21 z0<0> vdd vss inv_out INV_V2
+xi28 z0<1> vdd vss inv_out INV_V2
+xi27 z0<1> vdd vss inv_out INV_V2
+xi26 z0<1> vdd vss inv_out2 INV_V2
+xi25 z0<1> vdd vss inv_out INV_V2
 
 * Instantiate (DUT)
-* xd1 x1<0> x1<1> w01<0> w01<1> x0<0> x0<1> w00<0> w00<1> w20<1> w20<0>
+xd1  VDD VSS  W01<1> X1<0> W00<1> X0<0> X1<1> W01<0> X0<1> W00<0> 
++ W20<0> W20<1> W20<2> 
++ Z0<1> Z0<0> 
++ Neuron
 vdd0 vdd vss 0.9v
 vss0 vss 0 0v
 
